@@ -22,14 +22,20 @@ h1, h2 {
 #logo {
   float: left;
   font-size: 280%;
+ 
 }
 #menu {
   font-size: 110%;
   letter-spacing: 4px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
 }
 
 #menu, #logo{
   line-height: 75px;
+  
 }
 
 #menu li {
@@ -79,14 +85,31 @@ h1, h2 {
 }
 
 .button {
-  /*display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  margin: 150px 100px;
+  bottom: 8px;
+  left: 16 px;
+}
+footer {
+  bottom: 0;
+  
+  background-color:#009900;
+  width: 100%;
+}
+.social-media {
   text-align: center;
-  padding: 15px 32px;
-  overflow: hidden;
-  margin:  4px 2px;
-  position: relative;*/
-  margin: 25px 50px 150px 100px;
-  /*padding: 25px 50px 75px 100px;*/
+}
 
+.social-media>li {
+  display: inline-block;
+  margin-right: 5em;
+  vertical-align:bottom;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.social-media i {
+  font-size: 160%;
+  margin: 1%;
+  color: #fff
 }
