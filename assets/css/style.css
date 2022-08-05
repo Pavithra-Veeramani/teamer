@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   border: none;
+  
 }
 
 body{
@@ -20,8 +21,12 @@ h1, h2 {
 }
 
 #logo {
-  float: left;
+  display: block;
+  text-align: left;
   font-size: 280%;
+  margin-top: 1px;
+  background-color: #009900;
+  text-decoration: none;
  
 }
 #menu {
@@ -30,7 +35,7 @@ h1, h2 {
   position: fixed;
   top: 0;
   width: 100%;
-
+  
 }
 
 #menu, #logo{
@@ -46,15 +51,15 @@ h1, h2 {
 
 #menu a{
   text-decoration: none;
-  color: inherit;
+  color: #252525;
 }
 
 #menu a:hover{
-  border-bottom: 1px solid #009900;
+  border-bottom: 1px solid #252525;
 }
 
 .active {
-  border-bottom: 1px solid #009900  ;
+  border-bottom: 1px solid #252525  ;
 }
 
 #hero-outer {
@@ -112,4 +117,30 @@ footer {
   font-size: 160%;
   margin: 1%;
   color: #fff
+}
+.event-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.5;
+}
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.top-left {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  position: relative;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
