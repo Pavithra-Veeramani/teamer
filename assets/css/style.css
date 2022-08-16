@@ -124,7 +124,7 @@ footer {
   height: auto;
   opacity: 0.5;
 }*/
-.container {
+.events-container {
   /*position: relative;
   text-align: center;
   color: white;*/
@@ -206,3 +206,7 @@ h2 {
   padding: 10px;
 }
 
+.playersContainer{
+  width: 50%;
+  margin: 0 auto;
+}
