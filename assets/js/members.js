@@ -9,7 +9,12 @@ const members =
         id:2,
         name:'Jagadish2',
         email: 'Joinjiji'
-    }
+    },
+    {
+        id:3,
+        name: 'Pavithra',
+        email: 'pavithra_veeramani'
+    },
 ]
 
 
