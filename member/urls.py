@@ -15,10 +15,12 @@ Including another URLconf
 """
 
 from django.urls import path
-from member.views import get_member, get_home
+from member.views import get_member, get_home, add_member, submit_add_member
 
 
 urlpatterns = [
     path('', get_home, name='home'),
-    path('member/', get_member, name='member-page')
+    path('member/', get_member, name='member-page'),
+    path('addmember/', add_member, name='addmember-page'),
+    path('submitaddmember', submit_add_member, name='submitaddmember-page')
 ]

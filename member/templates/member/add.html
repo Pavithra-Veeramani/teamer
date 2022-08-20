@@ -40,37 +40,16 @@
         <div id="hero-image"></div>
     </section>
 
-
-    <div id="container" class="playersContainer">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                  <th>Player's name</th>
-                  <th>Email id</th>
-                </tr>
-              </thead>
-              <tbody id="players-list">
-                {% for member in members %}
-                <tr>
-                    <td> {{ member.first_name }} {{ member.last_name }} </td>
-                    <td> {{ member.email }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-        </table>
+    <div class="playersContainer">
+        <form action="/submitaddmember" method="POST">
+            {% csrf_token %}
+            <input type="text" id="fname" name="fname" placeholder="fname" aria-label="Enter first name" required><br><br>
+            <input type="text" id="lname" name="lname" placeholder="lname" aria-label="Enter last name"><br><br>
+            <input type="email" id="email" name="email" placeholder="Email" required aria-label="Enter email"><br><br>
+           
+            <input type="submit" value="Submit" class="btn-contactus-submit" aria-label="Click submit"><br>
+        </form>
     </div>
-
-    
-
-
-
-
-
-
-
-
-<!-- <script src="assets/js/members.js"></script> -->
-
 </body>
 
 </html>
