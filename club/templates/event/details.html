@@ -24,10 +24,10 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="teams.html" class="active">Members</a>
+                    <a href="/member" class="active">Members</a>
                 </li>
                 <li>
-                    <a href="events.html">Events</a>
+                    <a href="/event">Events</a>
                 </li>
                 <li>
                     <a href="login.html">Login</a>
@@ -45,19 +45,19 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                  <th>Player's name</th>
-                  <th>Email id</th>
+                  <th>Event name</th>
+                  <th>Event Timing</th>
+                  <th>Event Place</th>
+                  <th>Event Players</th>
                 </tr>
               </thead>
               <tbody id="players-list">
-                {% for member in members %}
-                <tr>
-                    <td> {{ member.first_name }} {{ member.last_name }} </td>
-                    <td> {{ member.email }}</td>
-                </tr>
-                {% endfor %}
+                <td>{{ user.id }}</td>
+                <td>{{ event.id }}</td>
               </tbody>
         </table>
+
+        <a href="{% url 'add_member_to_event' event.id user.id %}">Add me to Event</button>
     </div>
 
     
