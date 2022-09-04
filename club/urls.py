@@ -15,6 +15,7 @@ Including another URLconf
 """
 
 from django.urls import path, include
+from . import views
 from club.views import get_member, get_home, submit_add_member, get_events, add_event, get_event_details, add_member_to_event
 
 
@@ -25,7 +26,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('event/', get_events, name='events-page'),
     path('event/<int:id>', get_event_details, name='get_event_details'),
-    path('event/<int:event_id>/member/<str:member_id>', 
-     add_member_to_event, name='add_member_to_event'),
+    path('event/<int:id>/member/', add_member_to_event, name='add_member_to_event'),
     path('addevent/', add_event, name='addevent-page'),
 ]

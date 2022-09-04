@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 # Create your models here.
 # class Member(models.Model):
@@ -15,7 +15,7 @@ class Event(models.Model):
     place = models.CharField(max_length=50, null=False, blank=False)
     date = models.DateField()
     time = models.TimeField()
-    members = models.ManyToManyField(get_user_model())
+    members = models.ManyToManyField(User, related_name='players_in_event', blank=True)
 
     def __str__(self):
-        return self.name + ' ' + self.place + ' ' #+ self.date + ' ' + self.time
+        return self.name + ' ' + self.place + ' '

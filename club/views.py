@@ -28,6 +28,10 @@ def get_home(request):
 
 def get_events(request):
     events = Event.objects.all()
+
+    # for event in events:
+    #     print('Members ', event.members.all())
+
     context = {
         'events': events
     }
@@ -35,20 +39,23 @@ def get_events(request):
 
 def get_event_details(request, id):
     event = Event.objects.get(pk=id)
+    members = list(event.members.all())
+    print('Event from DB:', event)
     context = {
-        'event': event
+        'event': event,
+        'members': members
     }
     return render(request, 'event/details.html', context)
 
-def add_member_to_event(request, event_id, member_id):
-    event = Event.objects.get(pk=event_id)
-    print('Adding members ', member_id)
-    print('Adding members ', event_id)
-    print('Adding members ', event.members)
-    event.members_set.add(member_id)
-    event.save()
-    event = Event.objects.get(pk=event_id)
-    print('Adding members ', event.members)
+def add_member_to_event(request, id):
+    print('Adding members ', request.user)
+    event = Event.objects.get(pk=id)
+    print('Adding members ', event)
+    print('Adding members ', event.players_in_event_set)
+    event.players_in_event_set.add(request.user)
+    #event.save()
+    event = Event.objects.get(pk=id)
+    print('Adding members ', event.players_in_event_set)
 
     context = {
         'event': event

@@ -36,9 +36,9 @@
         </nav>
 
     </header>
-    <section id="hero-outer">
+    <!-- <section id="hero-outer">
         <div id="hero-image"></div>
-    </section>
+    </section> -->
 
 
     <div id="container" class="playersContainer">
@@ -54,10 +54,14 @@
               <tbody id="players-list">
                 <td>{{ user.id }}</td>
                 <td>{{ event.id }}</td>
+                <td>{{ event.place }}</td>
+                <td>{{ members }}</td>
               </tbody>
         </table>
-
-        <a href="{% url 'add_member_to_event' event.id user.id %}">Add me to Event</button>
+        <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="Post">
+            {% csrf_token %}
+            <button type="submit" name="post_id" value="" >Add me to Event</button>
+        </form>
     </div>
 
     
