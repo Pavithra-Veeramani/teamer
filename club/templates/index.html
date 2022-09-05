@@ -27,27 +27,33 @@
                 <li>
                     <a href="" class="active">Home</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li>
-                    <a href="member">Teams</a>
+                    <a href="/member" class="active">Members</a>
                 </li>
                 <li>
-                    <a href="event">Events</a>
+                    <a href="/event">Events</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="/accounts/logout">Logout</a>
                 </li>
+                {% else %}
+                <li>
+                    <a href="/accounts/login">Login</a>
+                </li>
+                <li>
+                    <a href="/accounts/signup">Register</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
 
     </header>
     <section id="hero-outer">
         <div id="hero-image"></div>
-       
     </section>
 
-    <section>
-        <a href="addmember" class="btn btn-outline-primary button">Get Started For Free</a>
-    </section>
+    
     <footer>
         <ul class="social-media">
             <li>

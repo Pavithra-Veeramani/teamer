@@ -23,6 +23,7 @@
                 <li>
                     <a href="index.html">Home</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li>
                     <a href="/member" class="active">Members</a>
                 </li>
@@ -30,8 +31,16 @@
                     <a href="/event">Events</a>
                 </li>
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="/accounts/logout">Logout</a>
                 </li>
+                {% else %}
+                <li>
+                    <a href="/accounts/login">Login</a>
+                </li>
+                <li>
+                    <a href="/accounts/signup">Register</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
 
@@ -60,6 +69,8 @@
         </table>
         <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="Post">
             {% csrf_token %}
+            <!-- To do - Show add me to event only if the members array doesn't have current user
+            if not show remove me from event button -->
             <button type="submit" name="post_id" value="" >Add me to Event</button>
         </form>
     </div>
