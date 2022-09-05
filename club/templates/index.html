@@ -1,83 +1,58 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/1ed67cabe7.js" crossorigin="anonymous"></script>
-    <title>Teamer</title>
-
-</head>
-
-<body>
-    <header>
-        <a href="index.html">
-            <h1 id="logo">Teamer</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="" class="active">Home</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="/member" class="active">Members</a>
-                </li>
-                <li>
-                    <a href="/event">Events</a>
-                </li>
-                <li>
-                    <a href="/accounts/logout">Logout</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/accounts/login">Login</a>
-                </li>
-                <li>
-                    <a href="/accounts/signup">Register</a>
-                </li>
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if "placeholder" in post.featured_image.url %}
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                                <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
+                            </a>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
                 {% endif %}
-            </ul>
-        </nav>
+                {% endfor %}
 
-    </header>
-    <section id="hero-outer">
-        <div id="hero-image"></div>
-    </section>
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
 
-    
-    <footer>
-        <ul class="social-media">
-            <li>
-                <a href="https://facebook.com" target="_blank" rel="no-opener"
-                    aria-label="visit our facebook page (link opens in new tab)">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://twitter.com" target="_blank" rel="no-opener"
-                aria-label="visit our twitter page (link opens in new tab)">
-                <i class="fa-brands fa-twitter"></i>
-                </a>
-            </li>
-            <li>
-                <a href="https://youtube.com" target="_blank" rel="no-opener"
-                aria-label="visit our youtube channel (link opens in new tab)">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            </li>
+            {% endif %}
         </ul>
-       
-    </footer>
-   
-</body>
-
-</html>
+    </nav>
+    {% endif %}
+</div>
+{%endblock%}
