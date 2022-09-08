@@ -10,14 +10,14 @@
 body{
   font-family: raleway, sans-serif;
   font-weight: 300;
-  color: #009900
+  
 }
 
 h1, h2 {
   font-family: roboto; sans-serif;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #252525
+  color: #fff
 }
 
 #logo {
@@ -51,7 +51,7 @@ h1, h2 {
 
 #menu a{
   text-decoration: none;
-  color: #252525;
+  color: #fff;
 }
 
 #menu a:hover{
@@ -98,7 +98,7 @@ h1, h2 {
 footer {
   bottom: 0;
   
-  background-color:#009900;
+  background-color: #0077b6;
   width: 100%;
 }
 .social-media {
@@ -116,87 +116,23 @@ footer {
 .social-media i {
   font-size: 160%;
   margin: 1%;
-  color: #fff
+  color: #c2e812
 }
-/*Styles for event page*/
-/*.event-img {
-  width: 100%;
-  height: auto;
-  opacity: 0.5;
-}*/
 .events-container {
-  /*position: relative;
-  text-align: center;
-  color: white;*/
   background-image: url('../images/football-3.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 800px;
-  /*opacity: 0.5;*/
+  
   padding: 50px;
   
 }
 h2 {
   text-align: center;
 }
- /*.top-left {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-}
-* {
-  box-sizing: border;
-}
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-/*.flip-box {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px;
-}
-.flip-box-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-box-front, .flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-box-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-box-back {
-  background-color: #555;
-  color: white;
-  transform: rotateY(180deg);
-}*/
+ 
 * {
   box-sizing: border-box;
 }

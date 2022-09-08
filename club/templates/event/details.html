@@ -1,91 +1,99 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Teamer</title>
-</head>
-
-<body>
-    <header>
-        <a href="index.html">
-            <h1 id="logo">Teamer</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="/member" class="active">Members</a>
-                </li>
-                <li>
-                    <a href="/event">Events</a>
-                </li>
-                <li>
-                    <a href="/accounts/logout">Logout</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/accounts/login">Login</a>
-                </li>
-                <li>
-                    <a href="/accounts/signup">Register</a>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
-
-    </header>
-    <!-- <section id="hero-outer">
-        <div id="hero-image"></div>
-    </section> -->
+{% block content %}
 
 
     <div id="container" class="playersContainer">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                  <th>Event name</th>
-                  <th>Event Timing</th>
-                  <th>Event Place</th>
-                  <th>Event Players</th>
-                </tr>
-              </thead>
-              <tbody id="players-list">
-                <td>{{ user.id }}</td>
-                <td>{{ event.id }}</td>
-                <td>{{ event.place }}</td>
-                <td>{{ members }}</td>
-              </tbody>
-        </table>
+       
+        <div class="margin-40px-tb">
+          <ul class="list-style9 no-margin">
+              <li>
+
+                  <div class="row">
+                      <div class="col-md-5 col-5">
+                          <i class="text-orange"></i>
+                          <strong class="margin-10px-left text-orange">Event Name:</strong>
+                      </div>
+                      <div class="col-md-7 col-7">
+                          <p>{{ event.name }}</p>
+                      </div>
+                  </div>
+
+              </li>
+              <li>
+
+                <div class="row">
+                    <div class="col-md-5 col-5">
+                        <i class="text-orange"></i>
+                        <strong class="margin-10px-left text-orange">Place:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                        <p>{{ event.place}}</p>
+                    </div>
+                </div>
+
+            </li>
+            <li>
+
+              <div class="row">
+                  <div class="col-md-5 col-5">
+                      <i class="text-orange"></i>
+                      <strong class="margin-10px-left text-orange">Time:</strong>
+                  </div>
+                  <div class="col-md-7 col-7">
+                      <p>{{ event.time}}</p>
+                  </div>
+              </div>
+
+            </li>
+            <li>
+
+              <div class="row">
+                  <div class="col-md-5 col-5">
+                      <i class="text-orange"></i>
+                      <strong class="margin-10px-left text-orange">Place:</strong>
+                  </div>
+                  <div class="col-md-7 col-7">
+                      <p>{{ event.place}}</p>
+                  </div>
+              </div>
+
+            </li>
+            <li>
+
+              <div class="row">
+                  <div class="col-md-5 col-5">
+                      <i class="text-orange"></i>
+                      <strong class="margin-10px-left text-orange">Players:</strong>
+                  </div>
+                  <div class="col-md-7 col-7">
+                    <ul>
+                      {% for x in members %}
+                      <li>
+                      {{ x }}
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+              </div>
+
+            </li>
+            </ul>
+         </div>
+       
         <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="Post">
             {% csrf_token %}
             <!-- To do - Show add me to event only if the members array doesn't have current user
             if not show remove me from event button -->
-            <button type="submit" name="post_id" value="" >Add me to Event</button>
+
+            {{members}}
+            
+            {% if user.username in members %}
+            <button type="submit" name="post_id" value="" ><span>Delete me from event</span></button>
+            {% else %}
+            <button type="submit" name="post_id" value="" ><span>Add me to event</span></button>
+            {% endif %}
         </form>
     </div>
-
+    {%endblock%}
     
-
-
-
-
-
-
-
-
-<!-- <script src="assets/js/members.js"></script> -->
-
-</body>
-
-</html>

@@ -1,54 +1,8 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Teamer</title>
-</head>
 
-<body>
-    <header>
-        <a href="index.html">
-            <h1 id="logo">Teamer</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="/member" class="active">Members</a>
-                </li>
-                <li>
-                    <a href="/event">Events</a>
-                </li>
-                <li>
-                    <a href="/accounts/logout">Logout</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/accounts/login">Login</a>
-                </li>
-                <li>
-                    <a href="/accounts/signup">Register</a>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
-
-    </header>
-    <!-- <section id="hero-outer">
-        <div id="hero-image"></div>
-    </section> -->
 
     <div class="playersContainer">
         <form action="/submitaddmember" method="POST">
@@ -60,6 +14,5 @@
             <input type="submit" value="Submit" class="btn-contactus-submit" aria-label="Click submit"><br>
         </form>
     </div>
-</body>
 
-</html>
+{%endblock%}

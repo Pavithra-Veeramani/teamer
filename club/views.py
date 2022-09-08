@@ -39,7 +39,7 @@ def get_events(request):
 
 def get_event_details(request, id):
     event = Event.objects.get(pk=id)
-    members = list(event.members.all())
+    members = event.members.all()
     print('Event from DB:', event)
     context = {
         'event': event,

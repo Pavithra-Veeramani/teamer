@@ -1,72 +1,27 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
+<div id="container" class="playersContainer">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <th>Player's name</th>
+              <th>Email id</th>
+            </tr>
+          </thead>
+          <tbody id="players-list">
+            {% for member in members %}
+            <tr>
+                <td> {{ member.first_name  }} {{ member.last_name }} </td>
+                <td> {{ member.email }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+{%endblock%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Teamer</title>
-</head>
 
-<body>
-    <header>
-        <a href="index.html">
-            <h1 id="logo">Teamer</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="/member" class="active">Members</a>
-                </li>
-                <li>
-                    <a href="/event">Events</a>
-                </li>
-                <li>
-                    <a href="/accounts/logout">Logout</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/accounts/login">Login</a>
-                </li>
-                <li>
-                    <a href="/accounts/signup">Register</a>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
 
-    </header>
 
-    <div id="container" class="playersContainer">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                  <th>Player's name</th>
-                  <th>Email id</th>
-                </tr>
-              </thead>
-              <tbody id="players-list">
-                {% for member in members %}
-                <tr>
-                    <td> {{ member.first_name  }} {{ member.last_name }} </td>
-                    <td> {{ member.email }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-        </table>
-    </div>
 
-    
-
-</body>
-
-</html>

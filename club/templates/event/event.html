@@ -1,58 +1,13 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Teamer</title>
-</head>
-
-<body>
-    <header>
-        <a href="index.html">
-            <h1 id="logo">Teamer</h1>
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="/member" class="active">Members</a>
-                </li>
-                <li>
-                    <a href="/event">Events</a>
-                </li>
-                <li>
-                    <a href="/accounts/logout">Logout</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/accounts/login">Login</a>
-                </li>
-                <li>
-                    <a href="/accounts/signup">Register</a>
-                </li>
-                {% endif %}
-                
-            </ul>
-        </nav>
-
-    </header>
-    <!-- <section id="hero-outer">
-        <div id="hero-image"></div>
-    </section> -->
+{% block content %}
 
 
+
+
+              
     <div id="container" class="playersContainer">
-        <table class="table table-bordered">
+         <table class="table table-bordered">
             <thead>
                 <tr>
                   <th>Event name</th>
@@ -61,21 +16,25 @@
                   <th>Time</th>
                   <th>Members</th>
                 </tr>
-              </thead>
-              <tbody id="players-list">
+              </thead> 
+               <tbody id="players-list">
                 {% for event in events %}
                 <tr>
-                    <!-- Add hyper link round event name /event/details -->
-                    <td> <a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></td>
+                      <!-- Add hyper link round event name /event/details  -->
+                     <td> <a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></td>
                     <td> {{ event.place }}</td>
                     <td> {{ event.date  }}</td>
                     <td> {{ event.time  }}</td>
-                    <td> {{ event.members  }}</td>
+                    <td> {{ event.members  }}</td> 
                 </tr>
+              
                 {% endfor %}
               </tbody>
-        </table>
+        </table> 
+        
     </div>
+
+    {%endblock%} -->
 
     
 
