@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Event
+from django.views.generic import View
 
 from django.contrib.auth import get_user_model
 
@@ -27,11 +28,13 @@ def get_home(request):
     return render(request, 'index.html')
 
 def get_events(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        place = request.POST.get('place')
+        date = request.POST.get('date')
+        time = request.POST.get('time')
+        Event.objects.create(name=name, place=place,date=date,time=time)
     events = Event.objects.all()
-
-    # for event in events:
-    #     print('Members ', event.members.all())
-
     context = {
         'events': events
     }
@@ -48,16 +51,42 @@ def get_event_details(request, id):
     return render(request, 'event/details.html', context)
 
 def add_member_to_event(request, id):
-    print('Adding members ', request.user)
+    print('adding')
     event = Event.objects.get(pk=id)
-    print('Adding members ', event)
-    print('Adding members ', event.players_in_event_set)
-    event.players_in_event_set.add(request.user)
+    event.members.add(request.user)
     #event.save()
     event = Event.objects.get(pk=id)
-    print('Adding members ', event.players_in_event_set)
+    members = event.members.all()
 
     context = {
-        'event': event
+        'event': event,
+        'members': members
     }
     return render(request, 'event/details.html', context)
+
+def delete_member_from_event(request, id):
+    ('deleting')
+    event = Event.objects.get(pk=id)
+    event.members.remove(request.user)
+    #event.save()
+    members = event.members.all()
+
+    context = {
+        'event': event,
+        'members': members
+    }
+    return render(request, 'event/details.html', context)
+
+class MemberEventView(View):
+    http_method_names = ['get', 'post', 'delete']
+
+    def post(self, *args, **kwargs):
+        print(self.request.method)
+
+    def delete(self, *args, **kwargs):
+        print('dfgdf')
+        print(self.request.method)
+    
+    def get(self, *args, **kwargs):
+        print('dfgdf')
+        print(self.request.method)

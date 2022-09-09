@@ -14,7 +14,6 @@
                   <th>Place</th>
                   <th>Date</th>
                   <th>Time</th>
-                  <th>Members</th>
                 </tr>
               </thead> 
                <tbody id="players-list">
@@ -25,16 +24,16 @@
                     <td> {{ event.place }}</td>
                     <td> {{ event.date  }}</td>
                     <td> {{ event.time  }}</td>
-                    <td> {{ event.members  }}</td> 
                 </tr>
-              
                 {% endfor %}
               </tbody>
-        </table> 
+        </table>
+
+        <a href="/addevent">Create new Event</a>
         
     </div>
 
-    {%endblock%} -->
+    {%endblock%}
 
     
 

@@ -81,19 +81,21 @@
             </ul>
          </div>
        
-        <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="Post">
-            {% csrf_token %}
-            <!-- To do - Show add me to event only if the members array doesn't have current user
-            if not show remove me from event button -->
 
-            {{members}}
-            
-            {% if user.username in members %}
-            <button type="submit" name="post_id" value="" ><span>Delete me from event</span></button>
+
+            {% if user in members %}
+            <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" name="post_id" value="" ><span>Delete me from event</span></button>
+            </form>
             {% else %}
-            <button type="submit" name="post_id" value="" ><span>Add me to event</span></button>
+            <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" name="post_id" value="" ><span>Add me to event</span></button>
+            </form>
             {% endif %}
-        </form>
+            
+        
     </div>
     {%endblock%}
     

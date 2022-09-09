@@ -5,7 +5,7 @@ Teamer is a sports management app designed in a way that users can manage and or
 <!-- TOC --><a name="table-of-contents"></a>
 ## Table of Contents
 <!-- TOC start -->
-- [Sweet Treats](#sweet-treats)
+- [Teamer](#Teamer)
   * [Table of Contents](#table-of-contents)
     + [Project Design](#project-design)
     + [User Experience](#user-experience)
