@@ -50,4 +50,4 @@ As a user I want to:
 
 As an Admin I want to: 
 
-- 
+- I want to create, read, update and delete operations for the website.

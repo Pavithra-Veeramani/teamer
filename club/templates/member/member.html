@@ -2,18 +2,19 @@
 
 {% block content %}
 <div id="container" class="playersContainer">
+    <h1>Club Members</h1>
     <table class="table table-bordered">
         <thead>
             <tr>
-              <th>Player's name</th>
-              <th>Email id</th>
+              <th>Member's Full name</th>
+              <th>Mamber Profile name</th>
             </tr>
           </thead>
           <tbody id="players-list">
             {% for member in members %}
             <tr>
                 <td> {{ member.first_name  }} {{ member.last_name }} </td>
-                <td> {{ member.email }}</td>
+                <td> {{ member.username }}</td>
             </tr>
             {% endfor %}
           </tbody>

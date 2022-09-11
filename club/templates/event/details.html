@@ -1,101 +1,108 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
-    <div id="container" class="playersContainer">
-       
-        <div class="margin-40px-tb">
-          <ul class="list-style9 no-margin">
-              <li>
-
-                  <div class="row">
-                      <div class="col-md-5 col-5">
-                          <i class="text-orange"></i>
-                          <strong class="margin-10px-left text-orange">Event Name:</strong>
-                      </div>
-                      <div class="col-md-7 col-7">
-                          <p>{{ event.name }}</p>
-                      </div>
-                  </div>
-
-              </li>
-              <li>
+  
+  
+<div id="container" class="playersContainer">
+    <h1>Event Details</h1>
+    <div class="margin-40px-tb">
+        <ul class="list-style9 no-margin">
+            <li>
 
                 <div class="row">
                     <div class="col-md-5 col-5">
                         <i class="text-orange"></i>
-                        <strong class="margin-10px-left text-orange">Place:</strong>
+                        <strong class="margin-10px-left text-orange">Event Name:</strong>
                     </div>
                     <div class="col-md-7 col-7">
-                        <p>{{ event.place}}</p>
+                        <p>{{ event.name }}</p>
                     </div>
                 </div>
 
             </li>
             <li>
 
-              <div class="row">
-                  <div class="col-md-5 col-5">
-                      <i class="text-orange"></i>
-                      <strong class="margin-10px-left text-orange">Time:</strong>
-                  </div>
-                  <div class="col-md-7 col-7">
-                      <p>{{ event.time}}</p>
-                  </div>
-              </div>
+            <div class="row">
+                <div class="col-md-5 col-5">
+                    <i class="text-orange"></i>
+                    <strong class="margin-10px-left text-orange">Place:</strong>
+                </div>
+                <div class="col-md-7 col-7">
+                    <p>{{ event.place}}</p>
+                </div>
+            </div>
 
-            </li>
-            <li>
+        </li>
+        <li>
 
-              <div class="row">
-                  <div class="col-md-5 col-5">
-                      <i class="text-orange"></i>
-                      <strong class="margin-10px-left text-orange">Place:</strong>
-                  </div>
-                  <div class="col-md-7 col-7">
-                      <p>{{ event.place}}</p>
-                  </div>
-              </div>
+            <div class="row">
+                <div class="col-md-5 col-5">
+                    <i class="text-orange"></i>
+                    <strong class="margin-10px-left text-orange">Time:</strong>
+                </div>
+                <div class="col-md-7 col-7">
+                    <p>{{ event.time}}</p>
+                </div>
+            </div>
 
-            </li>
-            <li>
+        </li>
+        <li>
 
-              <div class="row">
-                  <div class="col-md-5 col-5">
-                      <i class="text-orange"></i>
-                      <strong class="margin-10px-left text-orange">Players:</strong>
-                  </div>
-                  <div class="col-md-7 col-7">
-                    <ul>
-                      {% for x in members %}
-                      <li>
-                      {{ x }}
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-              </div>
+            <div class="row">
+                <div class="col-md-5 col-5">
+                    <i class="text-orange"></i>
+                    <strong class="margin-10px-left text-orange">Created by:</strong>
+                </div>
+                <div class="col-md-7 col-7">
+                    <p>{{ event.created_by}}</p>
+                </div>
+            </div>
 
-            </li>
-            </ul>
-         </div>
-       
+        </li>
 
+        <li>
 
-            {% if user in members %}
-            <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
-                {% csrf_token %}
-                <button type="submit" name="post_id" value="" ><span>Delete me from event</span></button>
-            </form>
-            {% else %}
-            <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="POST">
-                {% csrf_token %}
-                <button type="submit" name="post_id" value="" ><span>Add me to event</span></button>
-            </form>
-            {% endif %}
-            
-        
-    </div>
-    {%endblock%}
+            <div class="row">
+                <div class="col-md-5 col-5">
+                    <i class="text-orange"></i>
+                    <strong class="margin-10px-left text-orange">Players:</strong>
+                </div>
+                <div class="col-md-7 col-7">
+                <ul>
+                    {% for x in members %}
+                    <li>
+                    {{ x }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
+
+        </li>
+        </ul>
+        </div>
+    
+
+    {% if user in members %}
+    <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
+        {% csrf_token %}
+        <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete me from event</span></button>
+    </form>
+    {% else %}
+    <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" name="post_id" value="" class="btn btn-success"><span>Add me to event</span></button>
+    </form>
+    {% endif %}
+
+    {% if user == event.created_by %}
+    <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
+        {% csrf_token %}
+        <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
+    </form>
+    {% endif %}
+
+</div>
+
+{%endblock%}
     

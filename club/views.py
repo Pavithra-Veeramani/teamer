@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .models import Event
 from django.views.generic import View
 
@@ -16,12 +16,16 @@ def get_member(request):
 def add_event(request):
     return render(request, 'event/add.html')
 
-def submit_add_member(request):
-    fname = request.POST.get('fname')
-    lname = request.POST.get('lname')
-    email = request.POST.get('email')
-    Member.objects.create(first_name=fname, last_name=lname,email=email)
-    return render(request, 'member/addsuccess.html')
+def submit_add_event(request):
+    name = request.POST.get('name')
+    place = request.POST.get('place')
+    date = request.POST.get('date')
+    time = request.POST.get('time')
+    created_by = request.user
+
+    print('submit event', place)
+    Event.objects.create(name=name, place=place, date=date, time=time, created_by=created_by)
+    return redirect(reverse('events-page'))
 
 
 def get_home(request):
@@ -33,7 +37,7 @@ def get_events(request):
         place = request.POST.get('place')
         date = request.POST.get('date')
         time = request.POST.get('time')
-        Event.objects.create(name=name, place=place,date=date,time=time)
+        Event.objects.create(name=name, place=place,date=date, time=time)
     events = Event.objects.all()
     context = {
         'events': events
