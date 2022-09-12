@@ -34,7 +34,7 @@ DEBUG = development
 if development:
     ALLOWED_HOSTS = ['localhost']
 else:
-    aLLOWED_HOSTS = [os.environ('HEROKU_HOSTNAME')]    
+    ALLOWED_HOSTS = [os.environ('HEROKU_HOSTNAME')]    
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
