@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-@h2@1n81)ec%9u=7swznk8(qju)l15oif8du6^)s&54il0velg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['teamer-app.herokuapp.com']
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
