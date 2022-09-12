@@ -71,7 +71,7 @@ h1, h2 {
 #hero-image{
   height: 700px;
   width: 100%;
-  background: url("{% static 'images/football-2.jpeg'%}");
+  background: url("https://asset.cloudinary.com/dzqqmg1yp/bb6a193f15964bbfd5e76ca85e74d0b0");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
