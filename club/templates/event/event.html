@@ -2,8 +2,12 @@
 
 {% block content %}
 
-    <!-- <!-- <div id="container" class="playersContainer">
-      <h2>Events</h2>
+     <div id="container" class="playersContainer">
+      <div class="container-fluid">
+        <h2>Events</h2>
+        <img class="event-img" src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg" alt="Event Image">
+      </div>
+     
          <table class="table table-bordered">
             <thead>
                 <tr>
@@ -16,23 +20,21 @@
                <tbody id="players-list">
                 {% for event in events %}
                 <tr>
-                      <!-- Add hyper link round event name /event/details  -->
-                     <!-- <td> <a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></td>
+                       Add hyper link round event name /event/details  
+                      <td> <a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></td>
                     <td> {{ event.place }}</td>
                     <td> {{ event.date  }}</td>
                     <td> {{ event.time  }}</td>
-                </tr> -->
+                </tr>
                 {% endfor %}
               </tbody>
-        </table> -->
+        </table> 
+        
 
         <a href="/addevent" class="btn btn-success">Create new Event</a>
         
     </div> -->
-    <div class="container">
-      <h2>Events</h2>
-      <img class="event-img" src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg" alt="Event Image">
-    </div>
+    
 
     {%endblock%}
 
