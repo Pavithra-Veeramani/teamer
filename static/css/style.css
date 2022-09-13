@@ -89,10 +89,10 @@ h1, h2 {
   }
 }
 .event-img {
-  height: 700px;
-  width: 100%;
-  opacity: 0.5; 
+  background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg');
+  background-size: 100%;
 }
+
 
 .button {
   position: absolute;
