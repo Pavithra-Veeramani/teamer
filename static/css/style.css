@@ -88,6 +88,11 @@ h1, h2 {
       transform: scale(1.1);
   }
 }
+.event-img {
+  height: 700px;
+  width: 100%;
+  opacity: 0.5; 
+}
 
 .button {
   position: absolute;
