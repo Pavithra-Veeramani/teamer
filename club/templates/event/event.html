@@ -3,11 +3,23 @@
 {% block content %}
 
      <div id="container" class="playersContainer">
-      <div class="container-fluid">
+      <!-- <div class="container-fluid">
         <h2>Events</h2>
         <img class="event-img" src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg" alt="Event Image">
+      </div> -->
+      <div
+      class="bg-image"
+      style="
+        background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg');
+        height: 100vh;
+      "
+    >
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <h1 class="text-white mb-0">Page title</h1>
+        </div>
       </div>
-     
+    </div>
          <table class="table table-bordered">
             <thead>
                 <tr>
@@ -20,7 +32,7 @@
                <tbody id="players-list">
                 {% for event in events %}
                 <tr>
-                       Add hyper link round event name /event/details  
+                       <!-- Add hyper link round event name /event/details   -->
                       <td> <a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></td>
                     <td> {{ event.place }}</td>
                     <td> {{ event.date  }}</td>
@@ -33,7 +45,7 @@
 
         <a href="/addevent" class="btn btn-success">Create new Event</a>
         
-    </div> -->
+    </div> 
     
 
     {%endblock%}
