@@ -69,14 +69,14 @@ h1, h2 {
 #hero-image{
   height: 50vh;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020801/static/images/football-3.dabeb5e758ca.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020801/static/images/football-3.dabeb5e758ca.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0;
   position: relative;
 }
-.hero-text {
+.bg-text {
   margin-top: 10px;
 }
 
