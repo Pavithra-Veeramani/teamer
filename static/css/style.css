@@ -90,7 +90,10 @@ h1, h2 {
 }
 .event-img {
   background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg');
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 }
 
 
