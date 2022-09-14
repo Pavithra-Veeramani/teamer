@@ -10,13 +10,13 @@
 body{
   font-family: raleway, sans-serif;
   font-weight: 300;
-  background-color: #009900;
+  background-color: #c2e812;
 }
 
 h1, h2 {
   font-family: roboto; sans-serif;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   color: #000000
 }
 
