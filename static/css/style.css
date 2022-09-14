@@ -10,7 +10,10 @@
 body{
   font-family: raleway, sans-serif;
   font-weight: 300;
-  background-color: #052f5f;
+  background-color: #ffb703;
+}
+p {
+  color: #fff;
 }
 
 h1, h2 {
