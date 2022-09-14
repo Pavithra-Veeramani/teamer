@@ -111,7 +111,15 @@ h1, h2 {
   background-attachment: fixed;
   
 }
-
+.tbl-container {
+  width: 400px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.bdr {
+  border-radius: 6px;
+  overflow: hidden;
+}
 
 .button {
   position: absolute;

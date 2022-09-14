@@ -10,14 +10,14 @@
         <!-- <h2>Events</h2>
         <img src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663020799/static/images/football-7.e9f24961f386.jpg" class="img-fl" alt="Event Image">
       </div> -->
-     
-         <table class="table table-bordered center rounded" style="background-color: #8ecae6">
+        <div class="tbl-container bdr">
+         <table class="table borderless" style="background-color: #8ecae6">
             <thead>
                 <tr>
-                  <th>Event name</th>
-                  <th>Place</th>
-                  <th>Date</th>
-                  <th>Time</th>
+                  <th scope="col">Event name</th>
+                  <th scope="col">Place</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Time</th>
                 </tr>
               </thead> 
                <tbody id="players-list">
@@ -37,6 +37,7 @@
         <a href="/addevent" class="btn btn-success">Create new Event</a>
         
     </div> 
+  </div>
     
 
     {%endblock%}
