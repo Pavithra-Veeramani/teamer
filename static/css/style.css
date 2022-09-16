@@ -98,6 +98,7 @@ h1, h2 {
 .wrapper {
   background: fixed;
   background-size: cover;
+  height: 100vh;
 }
 
 
