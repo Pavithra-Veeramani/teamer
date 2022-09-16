@@ -95,7 +95,10 @@ h1, h2 {
   color: white;
   text-align: center;
 }
-
+.wrapper {
+  background: fixed;
+  background-size: cover;
+}
 
 
 
