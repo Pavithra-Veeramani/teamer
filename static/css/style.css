@@ -101,13 +101,14 @@ h1, h2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .event-img {
   /* background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663360177/static/images/football-11.53f81bf65739.jpg'); */
-  width: 300px;
-  height: auto;
-  object-fit: none;
-  display: inline-block;
-  vertical-align: middle;
+  flex-basis: 60%;
 }
 
 
