@@ -14,7 +14,7 @@
                             <strong class="margin-10px-left text-orange">Event Name:</strong>
                         </div>
                         <div class="col-md-7 col-7">
-                            <p>{{ event.name }}</p>
+                            <p>{{ event.name }} </p>
                         </div>
                     </div>
     
@@ -95,8 +95,9 @@
         {% endif %}
     
         {% if user == event.created_by %}
-        <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
+        <form class="d-inline" action="{% url 'delete_event'%}" method="POST">
             {% csrf_token %}
+            <input type="hidden" class="form-control" name="id" value="" required>
             <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
         </form>
         {% endif %}

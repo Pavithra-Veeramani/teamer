@@ -25,7 +25,11 @@ def submit_add_event(request):
 
     print('submit event', place)
     Event.objects.create(name=name, place=place, date=date, time=time, created_by=created_by)
-    return redirect(reverse('events-page'))
+    context = {
+        'message': 'You have successfully created an event'
+    }
+    #return redirect(reverse('events-page'))
+    return render(request, 'success.html', context)
 
 
 def get_home(request):
@@ -43,6 +47,13 @@ def get_events(request):
         'events': events
     }
     return render(request, 'event/event.html', context)
+
+def delete_event(request):
+    print(request.POST.get('id'))
+    context = {
+        'message': 'Event deleted successfully'
+    }
+    return render(request, 'success.html', context)
 
 def get_event_details(request, id):
     event = Event.objects.get(pk=id)

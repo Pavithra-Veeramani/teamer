@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.urls import path, include
 from . import views
-from club.views import get_member, get_home, submit_add_event, get_events, add_event, get_event_details, add_member_to_event, delete_member_from_event
+from club.views import get_member, get_home, submit_add_event, get_events, add_event, get_event_details, add_member_to_event, delete_member_from_event, delete_event
 
 
 urlpatterns = [
@@ -25,6 +25,7 @@ urlpatterns = [
     path('submitaddmember', submit_add_event, name='submitaddmember-page'),
     path('accounts/', include('allauth.urls')),
     path('event/', get_events, name='events-page'),
+    path('event/', delete_event, name='delete_event'),
     path('event/<int:id>', get_event_details, name='get_event_details'),
     path('event/<int:id>/add-member/', add_member_to_event, name='add_member_to_event'),
     path('event/<int:id>/delete-member/', delete_member_from_event, name='delete_member_from_event'),
