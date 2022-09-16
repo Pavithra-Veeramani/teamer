@@ -102,7 +102,7 @@ h1, h2 {
   background-size: cover;
 }
 .event-img {
-  background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663360177/static/images/football-11.53f81bf65739.jpg');
+  /* background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663360177/static/images/football-11.53f81bf65739.jpg'); */
   width: 300px;
   height: auto;
   object-fit: none;
