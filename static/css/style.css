@@ -111,7 +111,9 @@ h1, h2 {
   flex-basis: 60%;
   object-fit: contain;
 }
-
+img{
+  max-width: 100%;
+}
 
 
 
