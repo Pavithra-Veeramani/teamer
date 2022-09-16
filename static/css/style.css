@@ -96,9 +96,12 @@ h1, h2 {
   text-align: center;
 }
 .wrapper {
-  background: fixed;
+  background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663087503/static/images/football-9.c3c25ebf63fe.jpg;');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
+  position: relative;
 }
 
 
@@ -111,13 +114,9 @@ h1, h2 {
       transform: scale(1.1);
   }
 }
-.event-img {
-  background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663087503/static/images/football-9.c3c25ebf63fe.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
   
-}
+
 .tbl-container {
   width: 400px;
   margin-top: 10px;

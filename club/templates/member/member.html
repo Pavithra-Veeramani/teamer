@@ -2,26 +2,26 @@
 
 {% block content %}
 <div class="wrapper">
-  <img src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663087503/static/images/football-9.c3c25ebf63fe.jpg" alt="Players">
-  <div id="container" class="playersContainer">
-  
-    <h2>Club Members</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-              <th>Member's Full name</th>
-              <th>Member Profile name</th>
-            </tr>
-          </thead>
-          <tbody id="players-list">
-            {% for member in members %}
-            <tr>
-                <td> {{ member.first_name  }} {{ member.last_name }} </td>
-                <td> {{ member.username }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-    </table>
+<img src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663087503/static/images/football-9.c3c25ebf63fe.jpg" alt="Players">
+<div id="container" class="playersContainer">
+
+  <h2>Club Members</h2>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th>Member's Full name</th>
+            <th>Member Profile name</th>
+          </tr>
+        </thead>
+        <tbody id="players-list">
+          {% for member in members %}
+          <tr>
+              <td> {{ member.first_name  }} {{ member.last_name }} </td>
+              <td> {{ member.username }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+  </table>
 </div>
 </div>
 {%endblock%}
