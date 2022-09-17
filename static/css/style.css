@@ -20,7 +20,7 @@ p {
 }
 
 h1, h2 {
-  font-family: roboto; sans-serif;
+  font-family: roboto sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #000000
@@ -67,7 +67,9 @@ h1, h2 {
 .active {
   border-bottom: 1px solid #252525  ;
 }
-
+.bg-primary{
+  background-color: #00b4d8;
+}
 #hero-outer {
   align-content: center;
 }
