@@ -16,7 +16,7 @@ class Event(models.Model):
     place = models.CharField(max_length=50, null=False, blank=False)
     date = models.DateField()
     time = models.TimeField()
-    #created_by = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="owner")
+    created_by = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="owner")
     members = models.ManyToManyField(Member, related_name='players_in_event', blank=True)
 
     def __str__(self):
