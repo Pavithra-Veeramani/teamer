@@ -95,12 +95,12 @@
         {% endif %}
 
 
-
+        {% if current_member == event.created_by %}
         <form class="d-inline" action="{% url 'delete_event' event.id %}" method="POST">
             {% csrf_token %}
             <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
         </form>
-
+        {% endif %}
     
     </div>
     
