@@ -12,6 +12,8 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RunSQL("delete from club_event"),
+        migrations.RunSQL("delete from club_event_members"),
         migrations.CreateModel(
             name='Member',
             fields=[
@@ -32,6 +34,4 @@ class Migration(migrations.Migration):
             name='members',
             field=models.ManyToManyField(blank=True, related_name='players_in_event', to='club.Member'),
         ),
-        migrations.RunSQL("delete from club_event"),
-        migrations.RunSQL("delete from club_event_members"),
     ]
