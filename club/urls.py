@@ -25,11 +25,10 @@ urlpatterns = [
     path('submitaddmember', submit_add_event, name='submitaddmember-page'),
     path('accounts/', include('allauth.urls')),
     path('event/', get_events, name='events-page'),
-    path('event/', delete_event, name='delete_event'),
+    path('event/<int:id>/delete-event', delete_event, name='delete_event'),
     path('event/<int:id>', get_event_details, name='get_event_details'),
     path('event/<int:id>/add-member/', add_member_to_event, name='add_member_to_event'),
     path('event/<int:id>/delete-member/', delete_member_from_event, name='delete_member_from_event'),
-    #path('event/<int:id>/member/', views.MemberEventView.as_view(), name='event_members'),
     path('addevent/', add_event, name='addevent-page'),
     path('addevent/addevent-submit/', submit_add_event, name='addevent-submit-page'),
 ]

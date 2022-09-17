@@ -48,8 +48,8 @@ def get_events(request):
     }
     return render(request, 'event/event.html', context)
 
-def delete_event(request):
-    print(request.POST.get('id'))
+def delete_event(request, id):
+    Event.objects.filter(id=id).delete()
     context = {
         'message': 'Event deleted successfully'
     }

@@ -95,9 +95,8 @@
         {% endif %}
     
         {% if user == event.created_by %}
-        <form class="d-inline" action="{% url 'delete_event'%}" method="POST">
+        <form class="d-inline" action="{% url 'delete_event' event.id %}" method="POST">
             {% csrf_token %}
-            <input type="hidden" class="form-control" name="id" value="" required>
             <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
         </form>
         {% endif %}
