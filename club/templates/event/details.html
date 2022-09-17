@@ -93,8 +93,9 @@
             <button type="submit" name="post_id" value="" class="btn btn-success"><span>Add me to event</span></button>
         </form>
         {% endif %}
-    
-        {% if user == event.created_by %}
+
+
+        {% if current_member == event.created_by %}
         <form class="d-inline" action="{% url 'delete_event' event.id %}" method="POST">
             {% csrf_token %}
             <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
