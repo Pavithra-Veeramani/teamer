@@ -22,6 +22,7 @@ from club.views import get_member, get_home, submit_add_event, get_events, add_e
 urlpatterns = [
     path('', get_home, name='home'),
     path('member/', get_member, name='member-page'),
+    path('create_member/', views.CreateMember.as_view(), name='create_member'),
     path('submitaddmember', submit_add_event, name='submitaddmember-page'),
     path('accounts/', include('allauth.urls')),
     path('event/', get_events, name='events-page'),

@@ -42,6 +42,7 @@ else:
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_SIGNUP_REDIRECT_URL = "/create_member"
 
 # Application definition
 

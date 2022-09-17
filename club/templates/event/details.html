@@ -82,7 +82,7 @@
             </div>
         
     
-        {% if user in members %}
+        {% if current_member in members %}
         <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
             {% csrf_token %}
             <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete me from event</span></button>
@@ -94,12 +94,12 @@
         </form>
         {% endif %}
     
-        
+        {% if user == event.created_by %}
         <form class="d-inline" action="{% url 'delete_event' event.id %}" method="POST">
             {% csrf_token %}
             <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
         </form>
-
+        {% endif %}
     
     </div>
     
