@@ -10,17 +10,13 @@
 body{
   font-family: raleway, sans-serif;
   font-weight: 300;
-  
 }
-p {
-  color: #fff;
-}
+
 .abt-teamer {
   color:#262626;
 }
 
 h1, h2 {
-  font-family: roboto sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #000000
@@ -100,11 +96,12 @@ h1, h2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.container {
+.container-custom {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .event-img {
   /* background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663360177/static/images/football-11.53f81bf65739.jpg'); */
   flex-basis: 60%;
@@ -381,6 +378,10 @@ h2 {
     border-radius: 8px;
 }
 
+.bulletless {
+  list-style-type: none;
+  padding-left: 0;
+}
 
 /* Mobile Responsiveness Start */
 @media only screen and (max-width: 600px) {
@@ -388,12 +389,22 @@ h2 {
     width: 95%;
     justify-content: center;
   }
+  .member-details {
+    width: 90%; 
+    margin-right: auto; 
+    margin-left: auto;
+  }
 }
 /* Tablet Responsiveness Start */
 @media only screen and (min-width: 600px) {
   .hero-outer{
     width: 90%;
     justify-content: center;
+  }
+  .member-details {
+    width: 90%; 
+    margin-right: auto; 
+    margin-left: auto;
   }
 }
 
@@ -403,6 +414,11 @@ h2 {
     width: 75%;
     justify-content: center;
   }
+  .member-details {
+    width: 50%; 
+    margin-right: auto; 
+    margin-left: auto;
+  }
 }
 
 /* Desktop Responsiveness Start */
@@ -410,5 +426,10 @@ h2 {
   .hero-outer{
     width: 75%;
     justify-content: center;
+  }
+  .member-details {
+    width: 50%; 
+    margin-right: auto; 
+    margin-left: auto;
   }
 }

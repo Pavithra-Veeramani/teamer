@@ -1,96 +1,52 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div style="background-color: #8ecae6">
-    <div id="container" class="playersContainer" >
-        <h2>Event Details</h2>
-        <div class="margin-40px-tb">
-            <ul class="list-style9 no-margin">
-                <li>
-    
-                    <div class="row">
-                        <div class="col-md-5 col-5">
-                            <i class="text-orange"></i>
-                            <strong class="margin-10px-left text-orange">Event Name:</strong>
-                        </div>
-                        <div class="col-md-7 col-7">
-                            <p>{{ event.name }} </p>
-                        </div>
-                    </div>
-    
-                </li>
-                <li>
-    
-                <div class="row">
-                    <div class="col-md-5 col-5">
-                        <i class="text-orange"></i>
-                        <strong class="margin-10px-left text-orange">Place:</strong>
-                    </div>
-                    <div class="col-md-7 col-7">
-                        <p>{{ event.place}}</p>
-                    </div>
-                </div>
-    
-            </li>
-            <li>
-    
-                <div class="row">
-                    <div class="col-md-5 col-5">
-                        <i class="text-orange"></i>
-                        <strong class="margin-10px-left text-orange">Time:</strong>
-                    </div>
-                    <div class="col-md-7 col-7">
-                        <p>{{ event.time}}</p>
-                    </div>
-                </div>
-    
-            </li>
-            <li>
-    
-                <div class="row">
-                    <div class="col-md-5 col-5">
-                        <i class="text-orange"></i>
-                        <strong class="margin-10px-left text-orange">Created by:</strong>
-                    </div>
-                    <div class="col-md-7 col-7">
-                        <p>{{ event.created_by}}</p>
-                    </div>
-                </div>
-    
-            </li>
-    
-            <li>
-    
-                <div class="row">
-                    <div class="col-md-5 col-5">
-                        <i class="text-orange"></i>
-                        <strong class="margin-10px-left text-orange">Players:</strong>
-                    </div>
-                    <div class="col-md-7 col-7">
-                    <ul>
+  <div >
+    <div id="container container-custom" class="member-details" >
+        <table class="table" >
+
+            <tbody>
+              <tr>
+                <th scope="row">Event Name</th>
+                <td>{{ event.name }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Organizer</th>
+                <td>{{ event.created_by }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Place</th>
+                <td>{{ event.place }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Date/Time</th>
+                <td>{{ event.date }} {{ event.time }}</td>
+              </tr>
+              <tr>
+                <th scope="row">Who's playing</th>
+                <td>
+                    <ul class="bulletless">
                         {% for x in members %}
                         <li>
                         {{ x }}
                         </li>
                         {% endfor %}
                     </ul>
-                    </div>
-                </div>
-    
-            </li>
-            </ul>
-            </div>
-        
+                </td>
+              </tr>
+            </tbody>
+        </table>
+
     
         {% if current_member in members %}
         <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
             {% csrf_token %}
-            <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete me from event</span></button>
+            <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete me from this Game</span></button>
         </form>
         {% else %}
         <form class="d-inline" action="{% url 'add_member_to_event' event.id %}" method="POST">
             {% csrf_token %}
-            <button type="submit" name="post_id" value="" class="btn btn-success"><span>Add me to event</span></button>
+            <button type="submit" name="post_id" value="" class="btn btn-success"><span>Add me to this Game</span></button>
         </form>
         {% endif %}
 
@@ -98,7 +54,7 @@
         {% if current_member == event.created_by %}
         <form class="d-inline" action="{% url 'delete_event' event.id %}" method="POST">
             {% csrf_token %}
-            <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete Event</span></button>
+            <button  type="submit" name="post_id" value="" class="btn btn-danger"><span>Delete this Game</span></button>
         </form>
         {% endif %}
     
