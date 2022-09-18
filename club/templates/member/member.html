@@ -2,31 +2,42 @@
 {% load static %}
 {% block content %}
 
-<div class="wrapper" style="background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663087503/static/images/football-9.c3c25ebf63fe.jpg');
-height: 100vh">
 
-<div id="container" class="playersContainer">
-
-<h2>Club Members</h2>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-          <th>Member's Full name</th>
-          <th>Member Profile name</th>
-        </tr>
-      </thead>
-      <tbody id="players-list">
-        {% for member in members %}
-        <tr>
-            <td> {{ member.first_name  }} {{ member.last_name }} </td>
-            <td> {{ member.username }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-</table>
-</div>
-</div>
-
+  <div class="event-schedule-area-two" style="margin-top: 20px;">
+    <div class="container">
+        <!-- row end-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="home" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" scope="col">Name</th>
+                                        <th scope="col">Position</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for member in members %}
+                                    <tr class="inner-box">
+                                        <th scope="row">
+                                            <span>{{ member.first_name  }} {{ member.last_name }}</span>
+                                        </th>
+                                        <td>
+                                            <span>Defence</span>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
 {%endblock%}
 
 

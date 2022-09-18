@@ -2,51 +2,55 @@
 {% load static %}
 {% block content %}
 
-<div class="container">
-<div class="event-img">
-<img src="https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663363636/static/images/football-11.73340abee1c4.jpg">
+<div class="event-schedule-area-two" style="margin-top: 20px;">
+    <div class="container">
+        <!-- row end-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="home" role="tabpanel">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" scope="col">Date/Time</th>
+                                        <th scope="col">Organizer</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Venue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for event in events %}
+                                    <tr class="inner-box">
+                                        <th scope="row">
+                                            <span>{{ event.date  }} {{ event.time  }}</span>
+                                        </th>
+                                        <td>
+                                            <span>{{ event.created_by  }}</span>
+                                        </td>
+                                        <td>
+                                            <span><a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></span>
+                                        </td>
+                                        <td>
+                                            <span>{{ event.place  }}</span>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
 </div>
 
-
-
-
-
-    <div id="container" class="playersContainer">
-    
-        
-        <div class="tbl-container bdr">
-         <table class="table borderless" style="background-color: #8ecae6">
-            <thead>
-                <tr>
-                  <th scope="col">Event name</th>
-                  <th scope="col">Place</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Time</th>
-                </tr>
-              </thead> 
-               <tbody id="players-list">
-                {% for event in events %}
-                <tr>
-                       <!-- Add hyper link round event name /event/details   -->
-                      <td> <a  href="{% url 'get_event_details' event.id %}">{{ event.name  }}</a></td>
-                    <td> {{ event.place }}</td>
-                    <td> {{ event.date  }}</td>
-                    <td> {{ event.time  }}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-        </table> 
-        
-
-        <a href="/addevent" class="btn btn-success">Create new Event</a>
-        
-    </div> 
-  </div>
+<div class="container" style="padding: 20px;">
+  <a href="/addevent" class="btn btn-primary">Create new Event</a>
 </div>
 
-    
-
-    {%endblock%}
+{%endblock%}
 
     
 
