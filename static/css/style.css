@@ -411,7 +411,7 @@ h2 {
 /* Laptop Responsiveness Start */
 @media only screen and (min-width: 1280px) {
   .hero-outer{
-    width: 75%;
+    width: 70%;
     justify-content: center;
   }
   .member-details {
@@ -424,7 +424,7 @@ h2 {
 /* Desktop Responsiveness Start */
 @media only screen and (min-width: 1600px) {
   .hero-outer{
-    width: 75%;
+    width: 70%;
     justify-content: center;
   }
   .member-details {
@@ -432,4 +432,8 @@ h2 {
     margin-right: auto; 
     margin-left: auto;
   }
+}
+
+.custom-bg{
+  background-color: #e6f2ff;
 }
