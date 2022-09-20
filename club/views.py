@@ -5,17 +5,18 @@ from .models import Member
 
 from django.contrib.auth import get_user_model
 
+
 def get_member(request):
     members = Member.objects.all()
-    #User = get_user_model()
-    #users = User.objects.all()
     context = {
         'members': members
     }
     return render(request, 'member/member.html', context)
 
+
 def add_event(request):
     return render(request, 'event/add.html')
+
 
 def submit_add_event(request):
     name = request.POST.get('name')
@@ -26,7 +27,9 @@ def submit_add_event(request):
     created_by = member
 
     print('submit event', place)
-    Event.objects.create(name=name, place=place, date=date, time=time, created_by=created_by)
+    Event.objects.create(
+        name=name, place=place, date=date, time=time, created_by=created_by
+        )
     context = {
         'message': 'You have successfully created an event.'
     }
@@ -36,18 +39,20 @@ def submit_add_event(request):
 def get_home(request):
     return render(request, 'index.html')
 
+
 def get_events(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         place = request.POST.get('place')
         date = request.POST.get('date')
         time = request.POST.get('time')
-        Event.objects.create(name=name, place=place,date=date, time=time)
+        Event.objects.create(name=name, place=place, date=date, time=time)
     events = Event.objects.all()
     context = {
         'events': events
     }
     return render(request, 'event/event.html', context)
+
 
 def delete_event(request, id):
     Event.objects.filter(id=id).delete()
@@ -55,6 +60,7 @@ def delete_event(request, id):
         'message': 'Event deleted successfully.'
     }
     return render(request, 'event/event_action_success.html', context)
+
 
 def get_event_details(request, id):
     event = Event.objects.get(pk=id)
@@ -68,13 +74,12 @@ def get_event_details(request, id):
     }
     return render(request, 'event/details.html', context)
 
+
 def add_member_to_event(request, id):
     print('adding')
     member = Member.objects.filter(user=request.user).first()
     event = Event.objects.get(pk=id)
-
     event.members.add(member)
-    #event.save()
     event = Event.objects.get(pk=id)
     members = event.members.all()
 
@@ -83,12 +88,12 @@ def add_member_to_event(request, id):
     }
     return render(request, 'event/event_action_success.html', context)
 
+
 def delete_member_from_event(request, id):
     ('deleting')
     member = Member.objects.filter(user=request.user).first()
     event = Event.objects.get(pk=id)
     event.members.remove(member)
-    #event.save()
     members = event.members.all()
 
     context = {

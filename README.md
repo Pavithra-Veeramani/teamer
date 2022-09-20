@@ -54,6 +54,18 @@ As a returning visitor I want to:
 - Easily add members to the event.
 - Easily able to delete event and member from the group.
 
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three
+    different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
+   
+<img src="static/wireframes/home-page.png" width="600">
+
+<img src="static/wireframes/members-page.png" width="600">
+
+<img src="static/wireframes/events-page.png" width="600">
+
+
+     <hr>
+
 # Technologies Used
 
 [Go to the top](#table-of-contents)
