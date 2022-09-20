@@ -16,13 +16,15 @@ Including another URLconf
 
 from django.urls import path, include
 from . import views
-from club.views import get_member,
-get_home, submit_add_event,
-get_events, add_event,
-get_event_details,
-add_member_to_event,
-delete_member_from_event,
-delete_event
+from club.views import get_member
+from club.views import get_home
+from club.views import submit_add_event
+from club.views import get_events
+from club.views import add_event
+from club.views import get_event_details
+from club.views import add_member_to_event
+from club.views import delete_member_from_event
+from club.views import delete_event
 
 urlpatterns = [
     path('', get_home, name='home'),
