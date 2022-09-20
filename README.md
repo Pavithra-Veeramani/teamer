@@ -1,6 +1,6 @@
 # Teamer
 
-Teamer is a football group designed in a way that users can manage and organise the members and events. This site allows users to create event, add members to the group, add users to the event, delete event.
+Teamer is a football group designed in a way that users can manage and organise the members and events. This site allows users to create event, add members to the group, add members to the event and delete event.
 
 <!-- TOC --><a name="table-of-contents"></a>
 ## Table of Contents
@@ -56,15 +56,21 @@ As a returning visitor I want to:
 
 - [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three
     different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
-   
-<img src="static/wireframes/home-page.png" width="600">
 
-<img src="static/wireframes/members-page.png" width="600">
+    | Page | Wireframe |
+    | --- | --- |
+    | Home Page | <img src="static/wireframes/home-page.png" width="600"> | 
+    | Members Page |  <img src="static/wireframes/members-page.png" width="600"> | 
+    | Events Page | <img src="static/wireframes/events-page.png" width="600" > | 
+    | Log In Page | <img src="static/wireframes/login.png" width="600"> | 
+    | Mobile |  <img src="static/wireframes/mobile-home-page.png" width="600"> | 
+    | Tablet |  <img src="static/wireframes/tablet.png" width="600"> | 
+ 
+ <hr>
 
-<img src="static/wireframes/events-page.png" width="600">
+### Entity Relationship Diagram
 
-
-     <hr>
+<img src="static/wireframes/Entity_Relationship_Diagram.png" width="600">
 
 # Technologies Used
 
@@ -99,13 +105,11 @@ As a returning visitor I want to:
 
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
-Home page | When clicking the "home" button in the navigation bar, the browser redirects me to the home page. The is active styling will appear as the home button has a red background. | PASS
-Members page | When clicking the "menu" button in the navigation bar, the browser redirects me to the members page. The is active styling will appear as the menu button has a red background. | PASS
-Events page | When clicking the "contact" button in the navigation bar, the browser redirects me to the events page. The is active styling will appear as the contact button has a red background. | PASS
-Register page | When clicking the "manage bookings" button in the navigation bar, the browser redirects me to the signup page. The user will know they are on this page by the heading. | PASS
-Events details page | Checked foreground information is not distracted by backgrounds| PASS
-Create events page | When clicking the "register" button in the navigation bar, the browser redirects me to the register page. The user will know they are on this page by the heading. | PASS
-Login / Logout page | When clicking the "login" or "logout button in the navigation bar, the browser redirects me to the login or logout page. The user will know they are on this page by the heading. | PASS
+Home page | When clicking the home button in the navigation bar, the browser redirects me to the home page.  | PASS
+Members page | When clicking the members button in the navigation bar, the browser redirects me to the members page. | PASS
+Events page | When clicking the events button in the navigation bar, the browser redirects me to the events page.  | PASS
+Register page | When clicking the register button in the navigation bar, the browser redirects me to the register page. The user will know they are on this page by the heading. | PASS
+Login / Logout page | When clicking the login or logout button in the navigation bar, the browser redirects me to the login or logout page. The user will know they are on this page by the heading. | PASS
 Text | Checked that all fonts and colours used are consistent. | PASS
 
 ### Footer
@@ -171,7 +175,7 @@ Media | All media assets are displayed properly, have no pixelation or stretched
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 Accessibility | Checked the accessibility of the page using lighthouse| PASS
 
-### Logout page
+### Signout page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS

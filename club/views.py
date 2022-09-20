@@ -6,6 +6,8 @@ from .models import Member
 from django.contrib.auth import get_user_model
 
 
+""""Views to get members"""
+
 def get_member(request):
     members = Member.objects.all()
     context = {
@@ -13,11 +15,12 @@ def get_member(request):
     }
     return render(request, 'member/member.html', context)
 
-
+"""Views to create new event"""
 def add_event(request):
     return render(request, 'event/add.html')
 
-
+"""Submit create new event
+"""
 def submit_add_event(request):
     name = request.POST.get('name')
     place = request.POST.get('place')
@@ -35,7 +38,7 @@ def submit_add_event(request):
     }
     return render(request, 'event/event_action_success.html', context)
 
-
+""""""
 def get_home(request):
     return render(request, 'index.html')
 
