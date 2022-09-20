@@ -102,28 +102,11 @@ h1, h2 {
   justify-content: center;
 }
 
-.event-img {
-  /* background-image: url('https://res.cloudinary.com/dzqqmg1yp/image/upload/v1663360177/static/images/football-11.53f81bf65739.jpg'); */
-  flex-basis: 60%;
-  
-}
+
 img{
   max-width: 100%;
   object-fit: cover;
 }
-
-
-
-@keyframes hero-zoom {
-  from{
-      transform: scale(1);
-  }
-  to {
-      transform: scale(1.1);
-  }
-}
-
-  
 
 .tbl-container {
   width: 400px;
@@ -170,10 +153,10 @@ footer {
   background-size: cover;
   width: 100%;
   height: 800px;
-  
   padding: 50px;
   
 }
+
 h2 {
   text-align: center;
 }

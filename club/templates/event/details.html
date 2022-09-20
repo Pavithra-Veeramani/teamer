@@ -37,7 +37,11 @@
             </tbody>
         </table>
 
-    
+        <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{redirected}}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> -->
+
         {% if current_member in members %}
         <form class="d-inline" action="{% url 'delete_member_from_event' event.id %}" method="POST">
             {% csrf_token %}

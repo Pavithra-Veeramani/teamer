@@ -28,10 +28,9 @@ def submit_add_event(request):
     print('submit event', place)
     Event.objects.create(name=name, place=place, date=date, time=time, created_by=created_by)
     context = {
-        'message': 'You have successfully created an event'
+        'message': 'You have successfully created an event.'
     }
-    #return redirect(reverse('events-page'))
-    return render(request, 'success.html', context)
+    return render(request, 'event/event_action_success.html', context)
 
 
 def get_home(request):
@@ -53,9 +52,9 @@ def get_events(request):
 def delete_event(request, id):
     Event.objects.filter(id=id).delete()
     context = {
-        'message': 'Event deleted successfully'
+        'message': 'Event deleted successfully.'
     }
-    return render(request, 'success.html', context)
+    return render(request, 'event/event_action_success.html', context)
 
 def get_event_details(request, id):
     event = Event.objects.get(pk=id)
@@ -80,9 +79,9 @@ def add_member_to_event(request, id):
     members = event.members.all()
 
     context = {
-        'message': 'You have been successfully added to the event'
+        'message': 'You have been successfully added to the event.'
     }
-    return render(request, 'success.html', context)
+    return render(request, 'event/event_action_success.html', context)
 
 def delete_member_from_event(request, id):
     ('deleting')
@@ -93,9 +92,9 @@ def delete_member_from_event(request, id):
     members = event.members.all()
 
     context = {
-        'message': 'You have successfully deleted the event'
+        'message': 'You have successfully deleted the event.'
     }
-    return render(request, 'success.html', context)
+    return render(request, 'event/event_action_success.html', context)
 
 
 class CreateMember(View):

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card member-details">
+    <div class="card-body">
+        {{message}}
+        <p><a href="{% url 'events-page' %}" class="btn btn-success">OK</a></p>
+    </div>
+</div>
+{%endblock%}
