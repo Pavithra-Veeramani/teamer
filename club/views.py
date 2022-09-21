@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from .models import Event
 from django.views.generic import View
 from .models import Member
+from .forms import EditMemberForm
 
 from django.contrib.auth import get_user_model
 
@@ -157,3 +158,43 @@ class CreateMember(View):
         member.save()
 
         return redirect(reverse('home'))
+
+class EditMember(View):
+    model = Member()
+    template_name = "member/edit_member.html"
+    context_object_name = 'edit_member'
+
+    def get(self, request, user, *args, **kwargs):
+        member = Member.objects.filter(user=user).first()
+        if member is None:
+            return redirect(reverse('create_member'))
+
+        return render(
+            request,
+            "member/edit_member.html",
+            {
+                "member": member,
+                "updated": False,
+                "Edit_MemberForm": EditMemberForm(instance=member)
+            },
+        )
+
+    def post(self, request, user, *args, **kwargs):
+        member = Member.objects.get(user=user)
+
+        edit_member_form = EditMemberForm(request.POST, instance=member)
+
+        if edit_member_form.is_valid():
+            edit_member_form.save()
+        else:
+            edit_member_form = EditMemberForm(instance=member)
+
+        return render(
+            request,
+            "member/edit_member.html",
+            {
+                "member": member,
+                'updated': True,
+                "Edit_MemberForm": edit_member_form
+            },
+        )

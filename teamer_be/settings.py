@@ -34,6 +34,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 if development:
     ALLOWED_HOSTS = ['localhost']
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'crispy_forms',
     'club',
 ]
 

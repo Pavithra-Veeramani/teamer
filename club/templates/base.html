@@ -40,6 +40,9 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'edit_member' user.id %}">Edit My Profile</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/member">Members</a>
                     </li>
                     <li class="nav-item">
