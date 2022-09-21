@@ -54,8 +54,8 @@ As a first time I want to:
 As a returning visitor I want to:
 
 - Easily able to create event.
-- Easily add members to the event.
-- Easily able to delete event and member from the group.
+- Easily add myself to the event.
+- Easily delete me from the event.
 
 # Wireframe
 - [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
@@ -229,30 +229,109 @@ Accessibility | Checked the accessibility of the page using lighthouse| PASS
 
 - [Validation Testing:](#validation-testing)
 
+### Responsive Tools
+[Am I Responsive](https://ui.dev/amiresponsive) was used to check if all screens are responsive to all devices.
+
 ### Html Validation
 I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to check for any errors within the HTML pages.
+
+#### CSS:
+[W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
+![css_validation](static/wireframes/css-validator-screenshot.png)
+
+### Python
+[PeP 8](http://pep8online.com/) to check for any errors in python code.
+
+models.py
+![pep8_validation](static/wireframes/models.py-screenshot.png)
+
+urls.py
+![pep8_validation](static/wireframes/urls.py-screenshot.png)
+
+views.py
+![pep8_validation](static/wireframes/views.py-screenshot.png)
+
+### Bugs
+
 
 
 ### Deployment
 
 [Go to the top](#table-of-contents)
 
-I used the terminal to deploy my project locally. To do this I had to:
-1. Create a repository on GitHub.
-2. Clone the repository on your chosen source code editor (GitPod in my case) using the clone link.
-3. Open the terminal within GitPod
-4. Enter "python3 manage.py runserver into the terminal.
-5. Go to local host address on my web browser.
-6. All locally saved changes will show up here.
+To deploy this page to Heroku from its GitHub repository, the following steps were taken:
 
-For the final deployment to Heroku, I had to:
-1. Uncomment the PostgreSQL databse from my settings.py file.
-2. Set debug = False in my settings.py file.
-3. Commit and push all files to GitHub
-3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
-4. In the deploy tab, go to the manual deploy sections and click deploy branch.
+1. Create the Heroku App:
+    - Select "Create new app" in Heroku.
+    - Choose a name for your app and select the location.
+
+2. Attach the Postgres database:
+    - In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+
+3. Prepare the environment and settings.py file:
+    * In the Settings tab, click on Reveal Config Vars and copy the url next to DATABASE_URL.
+    * In your GitPod workspace, create an env.py file in the main directory. 
+    * Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+    * Add the SECRET_KEY value to the Config Vars in Heroku.
+    * Update the settings.py file to import the env file and add the SECRETKEY and DATABASE_URL file paths.
+    * Update the Config Vars with the Cloudinary url, adding into the settings.py file also.
+    * In settings.py add the following sections:
+        * Cloudinary to the INSTALLED_APPS list
+        * STATICFILE_STORAGE
+        * STATICFILES_DIRS
+        * STATIC_ROOT
+        * MEDIA_URL
+        * DEFAULT_FILE_STORAGE
+        * TEMPLATES_DIR
+        * Update DIRS in TEMPLATES with TEMPLATES_DIR
+        * Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+
+4. Store Static and Media files in Cloudinary and Deploy to Heroku:
+    - Create three directories in the main directory; media, storage and templates.
+    - Create a file named "Procfile" in the main directory and add the following:
+        - web: gunicorn project-name.wsgi
+    - Go to Deploy tab on Heroku and connect to the GitHub, then to the required recpository.
+    Click on Delpoy Branch and wait for the build to load. When the build is complete, the app can be opened through Heroku.
+
+### Forking the Repository
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
+2. Locate the [GitHub Repository](https://github.com/Pavithra-Veeramani/teamer).
+3. At the top of the repository, on the right side of the page, select "Fork"
+4. You should now have a copy of the original repository in your GitHub account.
+
+### Creating a Clone
+How to run this project locally:
+1. Install the [GitPod Browser](https://www.gitpod.io/docs/browser-extension/ "Link to Gitpod Browser extension download") Extension for Chrome.
+2. After installation, restart the browser.
+3. Log into [GitHub](https://github.com/login "Link to GitHub login page") or [create an account](https://github.com/join "Link to GitHub create account page").
+2. Locate the [GitHub Repository](https://github.com/Pavithra-Veeramani/teamer).
+5. Click the green "GitPod" button in the top right corner of the repository.
+This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
+
+How to run this project within a local IDE, such as VSCode:
+
+1. Log into [GitHub](https://github.com/login) or [create an account](https://github.com/join).
+2. Locate the [GitHub Repository](https://github.com/Pavithra-Veeramani/teamer).
+3. Under the repository name, click "Clone or download".
+4. In the Clone with HTTPs section, copy the clone URL for the repository.
+5. In your local IDE open the terminal.
+6. Change the current working directory to the location where you want the cloned directory to be made.
+7. Type 'git clone', and then paste the URL you copied in Step 3.
+```
+git clone https://github.com/Pavithra-Veeramani/teamer
+```
+8. Press Enter. Your local clone will be created.
+
+Further reading and troubleshooting on cloning a repository from GitHub [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
 
 <a name="end-product"></a>
+
+### References
+
+### Acknowledgements
 
 
 
