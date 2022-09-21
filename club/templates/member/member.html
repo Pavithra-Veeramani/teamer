@@ -25,7 +25,11 @@
                                             <span>{{ member.first_name  }} {{ member.last_name }}</span>
                                         </th>
                                         <td>
-                                            <span>{{ member.position }}</span>
+                                            {% if member.position %}
+                                                <span>{{ member.position }}</span>
+                                            {% else %}
+                                                <span>No Position</span>
+                                            {% endif %}
                                         </td>
                                     </tr>
                                     {% endfor %}
