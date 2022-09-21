@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 
 
 class Member(models.Model):
+    '''
+        Model for Member entity.
+        This has a one to one relation with django account User object
+    '''
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.CharField(max_length=50, null=False, blank=False)
@@ -16,6 +20,10 @@ class Member(models.Model):
 
 
 class Event(models.Model):
+    '''
+        Model for Event entity.
+        This has a many to many relation with the member table
+    '''
     name = models.CharField(max_length=50, null=False, blank=False)
     place = models.CharField(max_length=50, null=False, blank=False)
     date = models.DateField()

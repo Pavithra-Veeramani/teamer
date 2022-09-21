@@ -6,23 +6,28 @@ from .models import Member
 from django.contrib.auth import get_user_model
 
 
-""""Views to get members"""
-
 def get_member(request):
+    '''
+        View method to fetch all the members from the DB
+    '''
     members = Member.objects.all()
     context = {
         'members': members
     }
     return render(request, 'member/member.html', context)
 
-"""Views to create new event"""
 
 def add_event(request):
+    '''
+        View method to launch Create event page
+    '''
     return render(request, 'event/add.html')
 
-"""Submit create new event"""
 
 def submit_add_event(request):
+    '''
+        View method to save event in the DB
+    '''
     name = request.POST.get('name')
     place = request.POST.get('place')
     date = request.POST.get('date')
@@ -30,7 +35,6 @@ def submit_add_event(request):
     member = Member.objects.filter(user=request.user).first()
     created_by = member
 
-    print('submit event', place)
     Event.objects.create(
         name=name, place=place, date=date, time=time, created_by=created_by
         )
@@ -39,12 +43,18 @@ def submit_add_event(request):
     }
     return render(request, 'event/event_action_success.html', context)
 
-""""""
+
 def get_home(request):
+    '''
+        View method to launch Home page
+    '''
     return render(request, 'index.html')
 
 
 def get_events(request):
+    '''
+        View method to load all the events from the DB
+    '''
     if request.method == 'POST':
         name = request.POST.get('name')
         place = request.POST.get('place')
@@ -59,6 +69,9 @@ def get_events(request):
 
 
 def delete_event(request, id):
+    '''
+        View method to delete an event in the DB
+    '''
     Event.objects.filter(id=id).delete()
     context = {
         'message': 'Event deleted successfully.'
@@ -67,10 +80,12 @@ def delete_event(request, id):
 
 
 def get_event_details(request, id):
+    '''
+        View method to load the details of an event from the DB
+    '''
     event = Event.objects.get(pk=id)
     members = event.members.all()
     logged_member = member = Member.objects.filter(user=request.user).first()
-    print('Event from DB:', event)
     context = {
         'event': event,
         'members': members,
@@ -80,7 +95,10 @@ def get_event_details(request, id):
 
 
 def add_member_to_event(request, id):
-    print('adding')
+    '''
+        View method to add a member to an event.
+        This creates a record in the event_members table
+    '''
     member = Member.objects.filter(user=request.user).first()
     event = Event.objects.get(pk=id)
     event.members.add(member)
@@ -94,7 +112,10 @@ def add_member_to_event(request, id):
 
 
 def delete_member_from_event(request, id):
-    ('deleting')
+    '''
+        View method to delete a member from an event.
+        This deletes a record in the event_members table
+    '''
     member = Member.objects.filter(user=request.user).first()
     event = Event.objects.get(pk=id)
     event.members.remove(member)
@@ -107,6 +128,10 @@ def delete_member_from_event(request, id):
 
 
 class CreateMember(View):
+    '''
+        View to create a new member.
+        This creates a record in the members table
+    '''
     template_name = "create_member.html"
 
     def get(self, request, *args, **kwargs):

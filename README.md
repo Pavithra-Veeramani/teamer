@@ -16,8 +16,7 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
     + [Project Goals](#project-goals)
     + [User Stories](#user-stories)
     + [Wireframe](#wireframe-1)
-    + [Game Features](#game-features)
-    + [Future Features](#future-features)
+    + [Features](#features)
     + [Languages Used](#languages-used)
     + [Technology Used](#technology-used)
     + [Testing](#testing)
@@ -58,8 +57,8 @@ As a returning visitor I want to:
 - Easily add members to the event.
 - Easily able to delete event and member from the group.
 
-- [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three
-    different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
+# Wireframe
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
 
     | Page | Wireframe |
     | --- | --- |
@@ -67,14 +66,56 @@ As a returning visitor I want to:
     | Members Page |  <img src="static/wireframes/members-page.png" width="600"> | 
     | Events Page | <img src="static/wireframes/events-page.png" width="600" > | 
     | Log In Page | <img src="static/wireframes/login.png" width="600"> | 
-    | Mobile |  <img src="static/wireframes/mobile-home-page.png" width="600"> | 
-    | Tablet |  <img src="static/wireframes/tablet.png" width="600"> | 
+    | Mobile |  <img src="static/wireframes/mobile-home-page.png" width="400"> | 
+    | Tablet |  <img src="static/wireframes/tablet.png" width="400"> | 
  
  <hr>
 
 ### Entity Relationship Diagram
 
 <img src="static/wireframes/Entity_Relationship_Diagram.png" width="600">
+
+# Features
+
+### All pages
+- The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
+- If the user is logged in the navigation bar will look like this:
+![user_logged_in](static/wireframes/navigation%20bar.png)
+- If the user is not logged in the navigation bar will look like this:
+![user_logged_in](static/wireframes/navigation-2.png)
+
+### Register Page
+- A signup form which requires the member to enter username and a password. The pasword must be entered again for confirmation.
+- Once the user has successfully signed up, this will automatically log in and direct the user to the create profile page.
+![signup_page](static/wireframes/signup-page.png)
+
+### Login Page
+- A login form that requires the user to enter their username and password that they used when signing up to the site.
+![signin_page](static/wireframes/signin-page.png)
+
+### Logout Page
+- When clicking logout from the navigation bar, the member will be redirected to the signout page.
+![signout_page](static/wireframes/signout-page.png)
+
+### Landing Page
+- Landing page with the image of players from different teams.
+- An introduction about the football group.
+
+### Create Profile Page
+- Once the member has registered they will be redirected to the create profile page. The page displays a form for the member to enter their first name, last name, e-mail address and telephone number.
+
+### Create new event Page
+- Create new event Page allows members to create new event with form that consists of name, place, date and time.
+
+### Event details page
+- Event details page consists of event name, organizer, place, date/time and who's playing.
+- It also have add me to this game and delete this game button.
+
+### Members page
+- 
+
+
+
 
 # Technologies Used
 
