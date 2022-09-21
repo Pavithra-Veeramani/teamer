@@ -11,6 +11,7 @@ class Member(models.Model):
     last_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.CharField(max_length=50, null=False, blank=False)
     phone_number = models.CharField(max_length=12)
+    position = models.CharField(max_length=15, null=True, blank=True)
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, primary_key=True
         )

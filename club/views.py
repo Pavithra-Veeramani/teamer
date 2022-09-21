@@ -146,12 +146,14 @@ class CreateMember(View):
         l_name = request.POST.get("l_name")
         email = request.POST.get("email")
         tele = request.POST.get("phone_number")
+        position = request.POST.get("position")
 
         member = Member.objects.create(
             first_name=f_name,
             last_name=l_name,
             phone_number=tele,
             email=email,
+            position=position,
             user=request.user,
         )
 
