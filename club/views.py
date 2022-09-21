@@ -16,11 +16,12 @@ def get_member(request):
     return render(request, 'member/member.html', context)
 
 """Views to create new event"""
+
 def add_event(request):
     return render(request, 'event/add.html')
 
-"""Submit create new event
-"""
+"""Submit create new event"""
+
 def submit_add_event(request):
     name = request.POST.get('name')
     place = request.POST.get('place')

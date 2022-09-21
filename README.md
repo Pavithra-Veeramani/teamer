@@ -2,6 +2,10 @@
 
 Teamer is a football group designed in a way that users can manage and organise the members and events. This site allows users to create event, add members to the group, add members to the event and delete event.
 
+A live website can be found [here](https://teamer-app.herokuapp.com/).
+
+![website preview](static/wireframes/am%20i%20responsive.png)
+
 <!-- TOC --><a name="table-of-contents"></a>
 ## Table of Contents
 <!-- TOC start -->
@@ -181,6 +185,11 @@ TEST            | OUTCOME                          | PASS / FAIL
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
 Accessibility | Checked the accessibility of the page using lighthouse| PASS
+
+- [Validation Testing:](#validation-testing)
+
+### Html Validation
+I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to check for any errors within the HTML pages.
 
 
 ### Deployment
