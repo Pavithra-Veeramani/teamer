@@ -17,6 +17,7 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
       - [User Stories](#user-stories)
     + [Project Management](#project-management)
     + [Wireframe](#wireframe-1)
+    + [Surface](#surface)
     + [Features](#features)
     + [Languages Used](#languages-used)
     + [Technology Used](#technology-used)
@@ -42,6 +43,30 @@ The personal goals for this website are:
 - That users want to signup and engage with its content. 
 <br/>
 
+# Scope
+
+According to the project, not all features can be implemented in the first release of the project.
+For this reason, the project will be divided in multiple phases.The first phase will include the features that have been identified in order to build the minimum requirement.
+
+First Phase
+
+- Create a signup page
+- Create a signin page
+- Create Profile page
+
+Second Phase
+
+- Member can create event
+- Member can delete event
+- Member can edit profile page
+
+Third Phase
+
+- Member can opt for prefered position in create profile.
+-
+
+
+
 ### User Stories
 As a first time I want to:
 
@@ -57,6 +82,8 @@ As a returning visitor:
 - As a returning visitor, I want to create event.
 - As a returning visitor, I want to add myself to the event.
 - As a returning visitor, I want to delete the game and myself from the game.
+
+[Go to the top](#table-of-contents)
 
 # Project Management
 
@@ -83,6 +110,7 @@ GitHub projects was used as aproject management tool. Kanban board was used to a
 **Week 7**
 ![Project Management](static/kanban/kanban_week_7.png)
 
+[Go to the top](#table-of-contents)
 
 # Wireframe
 - [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
@@ -98,13 +126,25 @@ GitHub projects was used as aproject management tool. Kanban board was used to a
  
  <hr>
 
+### Entity Relationship Diagram
+
+<img src="static/wireframes/Entity_Relationship_Diagram.png" width="600">
+
+[Go to the top](#table-of-contents)
+
+# Surface
+
+ #### Color Scheme
+
+ ![Color scheme](static/pages_screenshot/coolors.png)
+
+ The colors used in the website are star command blue (#0077b6) for navigation bar and footer. Corn flower blue (#8ecae6) for the create new event form. Consistent white (#ffffff) background color all the pages.
+
  ### Typography
 
  The main font used in the site is raleway. With sanserif as fall back font incase raleway is not imported properly. 
 
-### Entity Relationship Diagram
-
-<img src="static/wireframes/Entity_Relationship_Diagram.png" width="600">
+[Go to the top](#table-of-contents)
 
 # Features
 
@@ -156,6 +196,8 @@ GitHub projects was used as aproject management tool. Kanban board was used to a
 - It consists of first name, lastname and telephone number.
 ![edit_my_profile](static/pages_screenshot/edit-my-profile.png)
 
+[Go to the top](#table-of-contents)
+
 # Technologies Used
 
 [Go to the top](#table-of-contents)
@@ -182,6 +224,8 @@ GitHub projects was used as aproject management tool. Kanban board was used to a
     -   Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
 -   [GitHub](https://github.com/)
     -   GitHub was used to store the project's code after being pushed from Git.
+
+[Go to the top](#table-of-contents)
 
 # Testing
 
@@ -271,12 +315,15 @@ Accessibility | Checked the accessibility of the page using lighthouse| PASS
 ### Responsive Tools
 [Am I Responsive](https://ui.dev/amiresponsive) was used to check if all screens are responsive to all devices.
 
-### Html Validation
+### Html Validation:
 I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to check for any errors within the HTML pages.
+![html_validation](static/wireframes/add-html-validation.png)
+Errors in the html validation could not be rectified because of the jinja template 
 
-#### CSS:
-[W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
-[css_validation](static/wireframes/css-validator-screenshot.png)
+### CSS:
+![W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
+
+![css_validation](static/wireframes/css-validator-screenshot.png)
 
 ### Python
 [PeP 8](http://pep8online.com/) to check for any errors in python code.
@@ -290,11 +337,13 @@ urls.py
 views.py
 ![pep8_validation](static/wireframes/views.py-screenshot.png)
 
-### Bugs
+[Go to the top](#table-of-contents)
+
+# Bugs
 
 
 
-### Deployment
+# Deployment
 
 [Go to the top](#table-of-contents)
 
@@ -368,6 +417,8 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 <a name="end-product"></a>
 
+[Go to the top](#table-of-contents)
+
 # Credits
 
 ### Media
@@ -377,15 +428,17 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 ### Code
 [Stack Overflow](https://stackoverflow.com/) were referenced to get better ideas in order to understand and implement the code.
+
 [Bootstrap](https://getbootstrap.com/) were referenced for the bootstrap ideas. 
 
+[Go to the top](#table-of-contents)
 
-### Acknowledgements
+# Acknowledgements
 
 - Thanks to my mentor Marcel Mulders for his support and feedback.
 
 - Thanks to the tutor support in code institute for their support.
 
-
+[Go to the top](#table-of-contents)
 
 
