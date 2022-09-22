@@ -11,10 +11,11 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
 <!-- TOC start -->
 - [Teamer](#Teamer)
   * [Table of Contents](#table-of-contents)
-    + [Project Design](#project-design)
     + [User Experience](#user-experience)
     + [Project Goals](#project-goals)
-    + [User Stories](#user-stories)
+    + [Scope](#scope)
+      - [User Stories](#user-stories)
+    + [Project Management](#project-management)
     + [Wireframe](#wireframe-1)
     + [Features](#features)
     + [Languages Used](#languages-used)
@@ -25,7 +26,7 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
       - [Fixed Bugs:](#fixed-bugs)
       - [Unfixed Bug:](#unfixed-bug)
     + [Deployment:](#deployment)
-    + [References:](#references)
+    + [Credits:](#credits)
     + [Acknowledgements](#acknowledgements)
 <!-- TOC end -->
 <br/>
@@ -51,11 +52,37 @@ As a first time I want to:
 - Be able to create an event and delete event.
 - Social media links make it easier for users to find your business and connect with your customers.
 
-As a returning visitor I want to:
+As a returning visitor:
 
-- Easily able to create event.
-- Easily add myself to the event.
-- Easily delete me from the event.
+- As a returning visitor, I want to create event.
+- As a returning visitor, I want to add myself to the event.
+- As a returning visitor, I want to delete the game and myself from the game.
+
+# Project Management
+
+GitHub projects was used as aproject management tool. Kanban board was used to add user stories and follow the project progress.
+
+**Week 1**
+![Project Management](static/kanban/kanban_week_1.png)
+
+**Week 2**
+![Project Management](static/kanban/kanban_week_2.png)
+
+**Week 3**
+![Project Management](static/kanban/kanban_week_3.png)
+
+**week 4**
+![Project Management](static/kanban/kanban_week_4.png)
+
+**Week 5**
+![Project Management](static/kanban/kanban_week_5.png)
+
+**Week 6**
+![Project Management](static/kanban/kaban_week_6.png)
+
+**Week 7**
+![Project Management](static/kanban/kanban_week_7.png)
+
 
 # Wireframe
 - [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
@@ -71,6 +98,10 @@ As a returning visitor I want to:
  
  <hr>
 
+ ### Typography
+
+ The main font used in the site is raleway. With sanserif as fall back font incase raleway is not imported properly. 
+
 ### Entity Relationship Diagram
 
 <img src="static/wireframes/Entity_Relationship_Diagram.png" width="600">
@@ -80,42 +111,50 @@ As a returning visitor I want to:
 ### All pages
 - The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
 - If the user is logged in the navigation bar will look like this:
-![user_logged_in](static/wireframes/navigation%20bar.png)
+![user_logged_in](static/pages_screenshot/navigation-1.png)
 - If the user is not logged in the navigation bar will look like this:
-![user_logged_in](static/wireframes/navigation-2.png)
+![user_logged_in](static/pages_screenshot/navigation-2.png)
 
 ### Register Page
 - A signup form which requires the member to enter username and a password. The pasword must be entered again for confirmation.
 - Once the user has successfully signed up, this will automatically log in and direct the user to the create profile page.
-![signup_page](static/wireframes/signup-page.png)
+![signup_page](static/pages_screenshot/signup-page.png)
 
 ### Login Page
 - A login form that requires the user to enter their username and password that they used when signing up to the site.
-![signin_page](static/wireframes/signin-page.png)
+![signin_page](static/pages_screenshot/signin-page.png)
 
 ### Logout Page
 - When clicking logout from the navigation bar, the member will be redirected to the signout page.
-![signout_page](static/wireframes/signout-page.png)
+![signout_page](static/pages_screenshot/signout-page.png)
 
-### Landing Page
+### Home Page
 - Landing page with the image of players from different teams.
 - An introduction about the football group.
+![home_page](static/pages_screenshot/home-page.png)
 
 ### Create Profile Page
-- Once the member has registered they will be redirected to the create profile page. The page displays a form for the member to enter their first name, last name, e-mail address and telephone number.
+- Once the member has registered they will be redirected to the create profile page. The page displays a form for the member to enter their first name, last name, e-mail address, telephone number and field position.
+![create_profile](static/pages_screenshot/create-profile.png)
 
 ### Create new event Page
 - Create new event Page allows members to create new event with form that consists of name, place, date and time.
+![events_page](static/pages_screenshot/events-page.png)
 
 ### Event details page
 - Event details page consists of event name, organizer, place, date/time and who's playing.
 - It also have add me to this game and delete this game button.
+![event_details_page](static/pages_screenshot/event-details-page.png)
 
 ### Members page
-- 
+- Members page is launched when the user signup and create profile form.
+- It consists of name and preferred position of the member.
+![members_page](static/pages_screenshot/members-page.png)
 
-
-
+### Edit my profile
+- Edit profile page allows members to edit their profile which was created in the create profile.
+- It consists of first name, lastname and telephone number.
+![edit_my_profile](static/pages_screenshot/edit-my-profile.png)
 
 # Technologies Used
 
@@ -237,7 +276,7 @@ I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to
 
 #### CSS:
 [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
-![css_validation](static/wireframes/css-validator-screenshot.png)
+[css_validation](static/wireframes/css-validator-screenshot.png)
 
 ### Python
 [PeP 8](http://pep8online.com/) to check for any errors in python code.
@@ -329,9 +368,23 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 <a name="end-product"></a>
 
-### References
+# Credits
+
+### Media
+
+[Pexels](https://www.pexels.com/) 
+- Home Page image taken by [Omar Ramadan](https://www.pexels.com/@omar-ramadan-1739260/)
+
+### Code
+[Stack Overflow](https://stackoverflow.com/) were referenced to get better ideas in order to understand and implement the code.
+[Bootstrap](https://getbootstrap.com/) were referenced for the bootstrap ideas. 
+
 
 ### Acknowledgements
+
+- Thanks to my mentor Marcel Mulders for his support and feedback.
+
+- Thanks to the tutor support in code institute for their support.
 
 
 

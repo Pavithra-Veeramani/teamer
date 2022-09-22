@@ -142,6 +142,9 @@ class CreateMember(View):
         )
 
     def post(self, request):
+        '''
+        View to create position in the members table
+        '''
         f_name = request.POST.get("f_name")
         l_name = request.POST.get("l_name")
         email = request.POST.get("email")
@@ -162,6 +165,10 @@ class CreateMember(View):
         return redirect(reverse('home'))
 
 class EditMember(View):
+
+    '''
+    View to create edit member in members table
+    '''
     model = Member()
     template_name = "member/edit_member.html"
     context_object_name = 'edit_member'
@@ -182,6 +189,7 @@ class EditMember(View):
         )
 
     def post(self, request, user, *args, **kwargs):
+        
         member = Member.objects.get(user=user)
 
         edit_member_form = EditMemberForm(request.POST, instance=member)
