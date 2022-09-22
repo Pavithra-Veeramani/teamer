@@ -359,7 +359,7 @@ I used [W3C Markup](https://validator.w3.org/#validate_by_input+with_options) to
 Errors in the html validation could not be rectified because of the jinja template 
 
 ### CSS:
-![W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
+[W3C CSS Validation](https://jigsaw.w3.org/css-validator/) to check for any errors within my CSS stylesheet.
 
 ![css_validation](static/wireframes/css-validator-screenshot.png)
 
