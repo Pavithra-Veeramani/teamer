@@ -156,50 +156,59 @@ Event table represents the events and Member table represents the members. There
 
 ### All pages
 - The navigation bar is placed at the top of all pages. The navigation bar is dynamic in that meaning depending on if the user is logged in or not the options will change.
-- If the user is logged in the navigation bar will look like this:
+- If the user is logged in, then the navigation bar will have all the menus:
 ![user_logged_in](static/pages_screenshot/navigation-1.png)
-- If the user is not logged in the navigation bar will look like this:
+- If the user is not logged in, then the navigation bar will show only the Home, Register and Login menus:
 ![user_logged_in](static/pages_screenshot/navigation-2.png)
 
 ### Register Page
-- A signup form which requires the member to enter username and a password. The pasword must be entered again for confirmation.
-- Once the user has successfully signed up, this will automatically log in and direct the user to the create profile page.
+- A signup form which requires the member to enter username and a password. The password must be entered again for confirmation.
+- Once the user has successfully signed up, they will be automatically redirected to create Member profile page.
 ![signup_page](static/pages_screenshot/signup-page.png)
 
 ### Login Page
 - A login form that requires the user to enter their username and password that they used when signing up to the site.
+- If the user enters valid username/password combination, then they will be redirected to the home page.
+- If the user didn't enter valid username/password combination, then an authentication error message is shown.
 ![signin_page](static/pages_screenshot/signin-page.png)
 
 ### Logout Page
-- When clicking logout from the navigation bar, the member will be redirected to the signout page.
+- When clicking Logout menu from the navigation bar, the member will be redirected to the Sign Out page.
+- On further clicking the Sign Out button the user will be logged out completely and redirected to the Home page.
 ![signout_page](static/pages_screenshot/signout-page.png)
 
 ### Home Page
-- Landing page with the image of players from different teams.
-- An introduction about the football group.
+- Landing page with an image.
+- An introduction about the football group in the section area.
 ![home_page](static/pages_screenshot/home-page.png)
 
 ### Create Profile Page
-- Once the member has registered they will be redirected to the create profile page. The page displays a form for the member to enter their first name, last name, e-mail address, telephone number and field position.
+- Once the member has registered they will be redirected to the create Member profile page. 
+- The page displays a form for the member to enter their first name, last name, e-mail address, telephone number and field position.
+- On clicking the Create profile button the member's details are saved and redirected to the Home page.
 ![create_profile](static/pages_screenshot/create-profile.png)
 
-### Create new event Page
+### Create new Event Page
 - Create new event Page allows members to create new event with form that consists of name, place, date and time.
 ![events_page](static/pages_screenshot/events-page.png)
 
 ### Event details page
-- Event details page consists of event name, organizer, place, date/time and who's playing.
-- It also have add me to this game and delete this game button.
+- Event details page consists of Event name, Organizer, Place, Date/Time and the Members that are playing in the event.
+- It also has 'Add me to this game', 'Delete me from this game' and 'Delete this game' buttons.
+- 'Add me to this game' button will only be visible if the logged in user hasn't already added them to this game.
+- 'Delete me from this game' button will only be visible if the logged in user has already added them to this game.
+- 'Delete this game' button will only be visible if the logged in user is the user that created this event.
 ![event_details_page](static/pages_screenshot/event-details-page.png)
 
 ### Members page
-- Members page is launched when the user signup and create profile form.
-- It consists of name and preferred position of the member.
+- Members page is launched when the user clicks the Member menu.
+- It lists all the Members in the group.
+- Member's full name and their playing position are displayed.
 ![members_page](static/pages_screenshot/members-page.png)
 
 ### Edit my profile
 - Edit profile page allows members to edit their profile which was created in the create profile.
-- It consists of first name, lastname and telephone number.
+- Members will be able to edit their first name, lastname and telephone number.
 ![edit_my_profile](static/pages_screenshot/edit-my-profile.png)
 
 [Go to the top](#table-of-contents)
@@ -258,63 +267,86 @@ TEST            | OUTCOME                          | PASS / FAIL
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
 
 ### Members page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check if all the registered members are listed | PASS
+Functionality | Check if all the registered members full name is shown | PASS
+Functionality | Check if all the registered members playing position is shown | PASS
 
 ### Events page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check if all the created eventsd are listed | PASS
+Functionality | Check whether Event details page is launched  when Event name hyper link is clicked| PASS
+Functionality | Check whether Create Event  page is launched  when Create Event button is clicked| PASS
 
 ### Register page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check Username and Password fields are present | PASS
+Functionality | Enter different values in the password field and check if an error message is shown | PASS
+Functionality | Enter different values in the password field and check if registration succeeds | PASS
+Functionality | Check if Create profile page is launched after registration succeeds | PASS
+Functionality | Click Signin link and check if Login page is launched | PASS
 
 ### Event details page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check whether all the event details are listed corerctly | PASS
+Functionality | Check whether all added members are listed correctly | PASS
+Functionality | Check whether 'Add me to this game button' is visible only if the user is not already added to this event | PASS
+Functionality | Check whether 'Delete me from this game' button is visible only if the user has already been added to this event | PASS
+Functionality | Check whether 'Delete this game' button is visible only if the event was created by the logged in user  | PASS
+Functionality | Click 'Add me to this game' button and check if the user is added to the Who's playing list | PASS
+Functionality | Click 'Add me to this game' button and check if the 'Delete me from this game' is visible | PASS
+Functionality | Click 'Delete me from this game' button and check if the user is removed from the Who's playing list | PASS
+Functionality | Click 'Delete me from this game' button and check if the 'Add me to this game' button is visible| PASS
+Functionality | Click 'Delete this game' button and check if the event is removed from the Events page | PASS
+
 
 ### Create event page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check whether error message is displayed if nothing is entered on the form and submitted | PASS
+Functionality | Check whether Event is successfully created if all details are entered on the form and submitted | PASS
+Functionality | Check whether Event is listed in the Events page | PASS
 
 ### Create Profile page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check whether Member profile form all the fields | PASS
+Functionality | Check whether Member profile is saved when all the details are entered and submitted | PASS
 
 ### SignIn page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Check Username and Password fields are present | PASS
+Functionality | Enter wrong username/password combination and check if an error message is shown | PASS
+Functionality | Enter correct username/password combination and check if Home page is launched | PASS
 
 ### Signout page
 TEST            | OUTCOME                          | PASS / FAIL  
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Functionality | Click on Logout menu and check if Logout confirmation page is launched | PASS
+Functionality | Click on Logout in Logout confirmation page and check if Home page is launched | PASS
 
 - [Validation Testing:](#validation-testing)
 
@@ -346,8 +378,16 @@ views.py
 [Go to the top](#table-of-contents)
 
 # Bugs
+- Delete this game functionality wasn't working properly.
+- Edit profile page's Phone number field was having dropdown. This was fixed in the widget in forms.py
+- Success page wasn't displayed for all the CRUD operations in Event and Members
+- Edit profile functionality was not properly implemented
+- Member's playing position was displaying None if no position entered. This was changed to 'No Position' in the template.
+- Date and Time fields were not correctly captured in the Create event page. This was fixed in the template.
 
 
+# Known Bugs
+- Create Event page not styled properly
 
 # Deployment
 
