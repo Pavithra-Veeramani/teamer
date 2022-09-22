@@ -50,38 +50,41 @@ For this reason, the project will be divided in multiple phases.The first phase 
 
 First Phase
 
-- Create a signup page
-- Create a signin page
-- Create Profile page
+- Create a Signup page
+- Create a Signin page
+- Create Member Profile page
+- Members list page
 
 Second Phase
 
-- Member can create event
-- Member can delete event
-- Member can edit profile page
+- Create Event page
+- Delete Event page
+- Events list page
+- Member can add themselves to an Event
+- Member can delete themselves from an Event
 
 Third Phase
 
-- Member can opt for prefered position in create profile.
--
-
+- Add playing position in member edit profile page.
+- Success page for all event crud operations.
 
 
 ### User Stories
-As a first time I want to:
+As a first time user I want to:
 
 - Easily understand the main purpose of the site, so that I can easily use the site.
 - Easily navigate through the site, so that I can easily find content and clearly see where I am on the site.
 - Signup to the website, independently register and gain access to the website.
 - Login into the website which allows a user to gain access to an application by entering their username and password.
-- Be able to create an event and delete event.
-- Social media links make it easier for users to find your business and connect with your customers.
 
-As a returning visitor:
+As a registered member:
 
-- As a returning visitor, I want to create event.
-- As a returning visitor, I want to add myself to the event.
-- As a returning visitor, I want to delete the game and myself from the game.
+- As a registered member, I want to create an Event.
+- As a registered member, I want to delete an Event.
+- As a registered member, I want to add myself to an event.
+- As a registered member, I want to remove myself from an event.
+- As a registered member, I want to delete the game that I created.
+- As a registered member, I want to edit my profile.
 
 [Go to the top](#table-of-contents)
 
@@ -129,6 +132,9 @@ GitHub projects was used as aproject management tool. Kanban board was used to a
 ### Entity Relationship Diagram
 
 <img src="static/wireframes/Entity_Relationship_Diagram.png" width="600">
+
+There are three main tables that are used for Events and Members entities.
+Event table represents the events and Member table represents the members. There is a many to many relation between both these tables and they are linked to each other by the Event_Members table.
 
 [Go to the top](#table-of-contents)
 
