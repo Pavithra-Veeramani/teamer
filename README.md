@@ -477,6 +477,8 @@ Further reading and troubleshooting on cloning a repository from GitHub [here](h
 
 [Bootstrap](https://getbootstrap.com/) were referenced for the bootstrap ideas. 
 
+[Django](https://docs.djangoproject.com/en/4.1/) was referenced for Django.
+
 [Go to the top](#table-of-contents)
 
 # Acknowledgements

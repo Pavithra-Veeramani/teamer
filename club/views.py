@@ -164,10 +164,11 @@ class CreateMember(View):
 
         return redirect(reverse('home'))
 
+
 class EditMember(View):
 
     '''
-    View to create edit member in members table
+    View to handle launch of create edit member page
     '''
     model = Member()
     template_name = "member/edit_member.html"
@@ -187,9 +188,11 @@ class EditMember(View):
                 "Edit_MemberForm": EditMemberForm(instance=member)
             },
         )
-
+    '''
+    View to handle submit of edit member in members page
+    '''
     def post(self, request, user, *args, **kwargs):
-        
+
         member = Member.objects.get(user=user)
 
         edit_member_form = EditMemberForm(request.POST, instance=member)
