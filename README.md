@@ -1,6 +1,6 @@
 # Astro Riders
 
-Astro Riders is a football group designed in a way that users can manage and organise the members and Events. This site allows users to implement the CRUD operations.
+Astro Riders is a football group designed in a way that users can manage and organise the Members and Events. This site allows users to implement the CRUD operations.
 
 A live website can be found [here](https://teamer-app.herokuapp.com/).
 
@@ -9,7 +9,7 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
 <!-- TOC --><a name="table-of-contents"></a>
 ## Table of Contents
 <!-- TOC start -->
-- [Astro Riders](#Astro Riders)
+- [Astro Riders](#astro-riders)
   * [Table of Contents](#table-of-contents)
     + [User Experience](#user-experience)
     + [Project Goals](#project-goals)
