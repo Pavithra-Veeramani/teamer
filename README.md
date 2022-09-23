@@ -1,6 +1,6 @@
-# Teamer
+# Astro Riders
 
-Teamer is a football group designed in a way that users can manage and organise the members and events. This site allows users to create event, add members to the group, add members to the event and delete event.
+Astro Riders is a football group designed in a way that users can manage and organise the members and Events. This site allows users to implement the CRUD operations.
 
 A live website can be found [here](https://teamer-app.herokuapp.com/).
 
@@ -9,7 +9,7 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
 <!-- TOC --><a name="table-of-contents"></a>
 ## Table of Contents
 <!-- TOC start -->
-- [Teamer](#Teamer)
+- [Astro Riders](#Astro Riders)
   * [Table of Contents](#table-of-contents)
     + [User Experience](#user-experience)
     + [Project Goals](#project-goals)
@@ -24,8 +24,7 @@ A live website can be found [here](https://teamer-app.herokuapp.com/).
     + [Testing](#testing)
       - [Validation Testing:](#validation-testing)
     + [Bugs:](#bugs)
-      - [Fixed Bugs:](#fixed-bugs)
-      - [Unfixed Bug:](#unfixed-bug)
+      - [Known Bugs:](#known-bugs)
     + [Deployment:](#deployment)
     + [Credits:](#credits)
     + [Acknowledgements](#acknowledgements)
@@ -41,7 +40,6 @@ The personal goals for this website are:
 - The site is easy to navigate and user friendly.
 - The purpose of the site is evident and inviting to users.
 - That users want to signup and engage with its content. 
-<br/>
 
 # Scope
 
@@ -90,7 +88,7 @@ As a registered member:
 
 # Project Management
 
-GitHub projects was used as aproject management tool. Kanban board was used to add user stories and follow the project progress.
+GitHub projects was used as a project management tool. Kanban board was used to add user stories and follow the project progress.
 
 **Week 1**
 ![Project Management](static/kanban/kanban_week_1.png)
@@ -116,7 +114,7 @@ GitHub projects was used as aproject management tool. Kanban board was used to a
 [Go to the top](#table-of-contents)
 
 # Wireframe
-- [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.For this project, I created three different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes for the website. For this project, I created three different wireframes for three different devices. Balsamiq wireframe is used to create outline of the website.  
 
     | Page | Wireframe |
     | --- | --- |
@@ -146,9 +144,13 @@ Event table represents the events and Member table represents the members. There
 
  The colors used in the website are star command blue (#0077b6) for navigation bar and footer. Corn flower blue (#8ecae6) for the create new event form. Consistent white (#ffffff) background color all the pages.
 
+ Please find the colours schemes that I used [here](https://coolors.co/0077b6-ffffff-8ecae6)
+
  ### Typography
 
- The main font used in the site is raleway. With sanserif as fall back font incase raleway is not imported properly. 
+ The main font used in the site is Raleway. With Sanserif as fall back font incase raleway is not imported properly. 
+
+ The link to the font can be found [here](https://fonts.google.com/specimen/Raleway?query=raleway)
 
 [Go to the top](#table-of-contents)
 
@@ -236,7 +238,7 @@ Event table represents the events and Member table represents the members. There
 -   [Balsamiq](https://balsamiq.com/)
     -   Balsamiq was used to create the wireframes during the design process.
 -   [Google Fonts](https://fonts.google.com/)
-    -   Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
+    -   Google fonts were used to import the "Raleway" font into the style.css file which is used on all pages throughout the project.
 -   [GitHub](https://github.com/)
     -   GitHub was used to store the project's code after being pushed from Git.
 
@@ -282,7 +284,7 @@ TEST            | OUTCOME                          | PASS / FAIL
 --------------- | -------------------------------- | ---------------
 Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
 Responsiveness | Check every element on the page for consistent scalability in mobile, tablet and desktop view.| PASS
-Functionality | Check if all the created eventsd are listed | PASS
+Functionality | Check if all the created events are listed | PASS
 Functionality | Check whether Event details page is launched  when Event name hyper link is clicked| PASS
 Functionality | Check whether Create Event  page is launched  when Create Event button is clicked| PASS
 
@@ -385,13 +387,12 @@ views.py
 - Member's playing position was displaying None if no position entered. This was changed to 'No Position' in the template.
 - Date and Time fields were not correctly captured in the Create event page. This was fixed in the template.
 
-
-# Known Bugs
+## Known Bugs
 - Create Event page not styled properly
 
-# Deployment
-
 [Go to the top](#table-of-contents)
+
+# Deployment
 
 To deploy this page to Heroku from its GitHub repository, the following steps were taken:
 
